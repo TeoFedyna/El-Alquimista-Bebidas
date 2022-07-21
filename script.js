@@ -17,23 +17,23 @@ do {
 } while (edad < 18 || edad > 99 || isNaN(edad));
 
 // Lista de productos
-const bebida1 = ("fernet", 1000)
-const bebida2 = ("vodka smirnoft", 1250)
-const bebida3 = ("vodka absolut", 3500)
-const bebida4 = ("vodka skyy", 980)
-const bebida5 = ("vodka grey goose", 9400)
-const bebida6 = ("ron havana club", 1900)
-const bebida7 = ("ron havana club 3 años blanco", 2100)
-const bebida8 = ("ron havana club 7 años", 4650)
-const bebida9 = ("ron malibu", 2100)
-const bebida10 = ("gin bombay", 4100)
-const bebida11 = ("gin bombay bramble raspberry blackberry", 5700)
-const bebida12 = ("gin beefeater", 3650)
-const bebida13 = ("gin tanqueray", 3100)
-const bebida14 = ("whisky jack daniels", 6890)
-const bebida15 = ("whisky grants triple wood", 6100)
-const bebida16 = ("whisky johnnie walker black label", 5100)
-const bebida17 = ("whisky chivas regal 12 años", 5700)
+const bebida1 = {nombre:"fernet", precrio: 1000}
+const bebida2 = {nombre:"vodka smirnoft", precrio: 1250}
+const bebida3 = {nombre:"vodka absolut", precrio: 3500}
+const bebida4 = {nombre:"vodka skyy", precrio: 980}
+const bebida5 = {nombre:"vodka grey goose", precrio: 9400}
+const bebida6 = {nombre:"ron havana club", precrio: 1900}
+const bebida7 = {nombre:"ron havana club 3 años blanco", precrio: 2100}
+const bebida8 = {nombre:"ron havana club 7 años", precrio: 4650}
+const bebida9 = {nombre:"ron malibu", precrio: 2100}
+const bebida10 = {nombre:"gin bombay", precrio: 4100}
+const bebida11 = {nombre:"gin bombay bramble raspberry blackberry", precrio: 5700}
+const bebida12 = {nombre:"gin beefeater", precrio: 3650}
+const bebida13 = {nombre:"gin tanqueray", precrio: 3100}
+const bebida14 = {nombre:"whisky jack daniels", precrio: 6890}
+const bebida15 = {nombre:"whisky grants triple wood", precrio: 6100}
+const bebida16 = {nombre:"whisky johnnie walker black label", precrio: 5100}
+const bebida17 = {nombre:"whisky chivas regal 12 años", precrio: 5700}
     
 let total = 0 
 let carrito = []
