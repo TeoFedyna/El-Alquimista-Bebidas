@@ -17,27 +17,41 @@ do {
 } while (edad < 18 || edad > 99 || isNaN(edad));
 
 // Lista de productos
-    const bebida1 = ("fernet", 1000)
-    const bebida2 = ("vodka smirnoft", 1250)
-    const bebida3 = ("vodka absolut", 3500)
-    const bebida4 = ("vodka skyy", 980)
-    const bebida5 = ("vodka grey goose", 9400)
-    const bebida6 = ("ron havana club", 1900)
-    const bebida7 = ("ron havana club 3 años blanco", 2100)
-    const bebida8 = ("ron havana club 7 años", 4650)
-    const bebida9 = ("ron malibu", 2100)
-    const bebida10 = ("gin bombay", 4100)
-    const bebida11 = ("gin bombay bramble raspberry blackberry", 5700)
-    const bebida12 = ("gin beefeater", 3650)
-    const bebida13 = ("gin tanqueray", 3100)
-    const bebida14 = ("whisky jack daniels", 6890)
-    const bebida15 = ("whisky grants triple wood", 6100)
-    const bebida16 = ("whisky johnnie walker black label", 5100)
-    const bebida17 = ("whisky chivas regal 12 años", 5700)
-    
-    let total = 0 
-    let carrito = []
 
-function sumarProductos( ) {
-    
+const bebida1 = {nombre : "fernet", precio : 1000}
+const bebida2 = {nombre : "vodka smirnoft", precio : 1250}
+const bebida3 = {nombre : "vodka absolut", precio : 3500}
+const bebida4 = {nombre : "vodka skyy", precio : 980}
+const bebida5 = {nombre : "vodka grey goose", precio : 9400}
+const bebida6 = {nombre : "ron havana club", precio : 1900}
+const bebida7 = {nombre : "ron havana club 3 años blanco", precio : 2100}
+const bebida8 = {nombre : "ron havana club 7 años", precio : 4650}
+const bebida9 = {nombre : "ron malibu", precio : 2100}
+const bebida10 = {nombre : "gin bombay", precio : 4100}
+const bebida11 = {nombre : "gin bombay bramble raspberry blackberry", precio : 5700}
+const bebida12 = {nombre : "gin beefeater", precio : 3650}
+const bebida13 = {nombre : "gin tanqueray", precio : 3100}
+const bebida14 = {nombre : "whisky jack daniels", precio : 6890}
+const bebida15 = {nombre : "whisky grants triple wood", precio : 6100}
+const bebida16 = {nombre : "whisky johnnie walker black label", precio : 15100}
+const bebida17 = {nombre : "whisky chivas regal 12 años", precio : 5700}
+
+
+let total = 0 
+let carrito = []
+/*
+//prompt("que productos queres commprar?")
+
+function sumarProductos(productos1, productos2, productos3, productos4, productos5, productos6, productos7, productos8, productos9, productos10, productos11, productos12, productos13, productos14, productos15, productos16, productos17) {
+    console.log(productos1 + productos2 + productos3 + productos4 + productos5 + productos6 + productos7 + productos8 + productos9 + productos10 + productos11 + productos12 + productos13 + productos14 + productos15 + productos16 + productos17); 
 }
+
+sumarProductos(bebida12, bebida3)
+
+
+do {
+    prompt("Que bebidas desea comprar?").toLowerCase()
+    prompt("Que bebidas desea comprar?").toLowerCase()
+
+} while (condition);
+*/
