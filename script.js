@@ -17,6 +17,23 @@ do {
 } while (edad < 18 || edad > 99 || isNaN(edad));
 
 // Lista de productos
+class Producto {
+    constructor(tipo = "", nombre = "", precio = 900) {
+        this.tipo = tipo;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    aumentarPrecio(porcentajeAumentado) {
+        this.precio *= porcentajeAumentado
+    }
+
+    aplicarDescuento(porcentajeDescuento) {
+        this.precio -= (this.precio * porcentajeDescuento)
+    }
+
+}
+
 const bebida1 = new Producto ("fernet", "branca", 1000)
 const bebida18 = new Producto ("fernet", "branca menta", 1000)
 const bebida2 = new Producto ("vodka", "smirnoft", 1250)
@@ -36,24 +53,9 @@ const bebida15 = new Producto ("whisky", "grants triple wood", 6100)
 const bebida16 = new Producto ("whisky", "johnnie walker black label", 5100)
 const bebida17 = new Producto ("whisky", "chivas regal 12 años", 5700)
 
+const bebidas = [bebida1, bebida2, bebida3, bebida4, bebida5, bebida6, bebida7, bebida8, bebida9, bebida10, bebida11, bebida12, bebida13, bebida14, bebida15, bebida15, bebida16, bebida17, bebida18]
+
+
 let carrito = []
-
-class Producto {
-    constructor(tipo = "", nombre = "", precio = 900) {
-        this.tipo = tipo;
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-
-    aumentarPrecio(porcentajeAumentado) {
-        this.precio *= porcentajeAumentado
-    }
-
-    aplicarDescuento(porcentajeDescuento) {
-        this.precio -= (this.precio * porcentajeDescuento)
-    }
-
-}
-
 
 
