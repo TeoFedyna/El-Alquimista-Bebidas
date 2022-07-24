@@ -36,7 +36,6 @@ const bebida15 = new Producto ("whisky", "grants triple wood", 6100)
 const bebida16 = new Producto ("whisky", "johnnie walker black label", 5100)
 const bebida17 = new Producto ("whisky", "chivas regal 12 años", 5700)
 
-let total = 0 
 let carrito = []
 
 class Producto {
@@ -53,7 +52,6 @@ class Producto {
     aplicarDescuento(porcentajeDescuento) {
         this.precio -= (this.precio * porcentajeDescuento)
     }
-
 
 }
 
