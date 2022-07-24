@@ -58,4 +58,7 @@ const bebidas = [bebida1, bebida2, bebida3, bebida4, bebida5, bebida6, bebida7, 
 
 let carrito = []
 
+// Buscardor
 
+const buscar = bebidas.find((product) => product.nombre === prompt("Que bebida estas buscando?").toLowerCase()/*buscar bebida por el nombre*/)
+console.log(buscar)  
