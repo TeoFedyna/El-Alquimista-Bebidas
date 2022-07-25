@@ -1,6 +1,6 @@
 // Validador para mayoria de edad
 let edad
-
+/*
 do {
     edad = parseInt(prompt("Que edad tiene ?"))
 
@@ -13,9 +13,8 @@ do {
     }else {
         alert("Bienvenido a El Alquimista bebidas, porfavor elija su compra!!!")
     }
-
 } while (edad < 18 || edad > 99 || isNaN(edad));
-
+*/
 // Lista de productos
 class Producto {
     constructor(tipo = "", nombre = "", precio = 900) {
@@ -25,13 +24,12 @@ class Producto {
     }
 
     aumentarPrecio(porcentajeAumentado) {
-        this.precio *= porcentajeAumentado
+        return this.precio *= (1 + porcentajeAumentado)
     }
 
     aplicarDescuento(porcentajeDescuento) {
-        this.precio -= (this.precio * porcentajeDescuento)
+        return this.precio *= (1 - porcentajeDescuento)
     }
-
 }
 
 const bebida1 = new Producto ("fernet", "branca", 1000)
@@ -60,5 +58,65 @@ let carrito = []
 
 // Buscardor
 
-const buscar = bebidas.find((product) => product.nombre === prompt("Que bebida estas buscando?").toLowerCase()/*buscar bebida por el nombre*/)
-console.log(buscar)  
+//const buskar = bebidas.find((product) => product.nombre === prompt("Que bebida estas buscando?").toLowerCase()) //buscar bebida por el nombre)
+//console.log(buscar)  
+
+//FILTRO POR TIPO DE BEBIDAS
+const tipoFernet = bebidas.filter((tipoBebida) => tipoBebida.tipo == "fernet")
+const tipoVodka = bebidas.filter((tipoBebida) => tipoBebida.tipo == "vodka")
+const tipoRon = bebidas.filter((tipoBebida) => tipoBebida.tipo == "ron")
+const tipoGin = bebidas.filter((tipoBebida) => tipoBebida.tipo == "gin")
+const tipoWhiskey = bebidas.filter((tipoBebida) => tipoBebida.tipo == "whisky")
+
+
+/*
+function odenarBebidas(pregunta) {
+    if (pregunta = "fenet") {
+        console.log(tipoFernet);
+    }else if (pregunta = "vodka") {
+        console.log(tipoVodka);
+    }else if (pregunta = "ron") {
+        console.log(tipoRon);
+    }else if (pregunta = "gin") {
+        console.log(tipoGin);
+    }else if (pregunta = "whiskey"){
+        console.log(tipoWhiskey);
+    } else{
+        alert("no esxiste este tipo de bebida")
+    }
+}
+
+let pregunta
+
+do {
+    pregunta = prompt("que tipo de bebidas estas buscando? (fernet, vodka, ron, gin o whiskey)").toLowerCase()
+    odenarBebidas(pregunta)
+    listo = prompt("quieres ver mas tipos de bebidas?").toLowerCase()
+} while (listo !== "no");
+
+//
+
+let pregunta
+
+do {
+    pregunta = prompt("que tipo de bebidas estas buscando? (fernet, vodka, ron, gin o whiskey)").toLowerCase()
+    if (pregunta = "fenet") {
+        console.log(tipoFernet);
+    }else if (pregunta = "vodka") {
+        console.log(tipoVodka);
+    }else if (pregunta = "ron") {
+        console.log(tipoRon);
+    }else if (pregunta = "gin") {
+        console.log(tipoGin);
+    }else if (pregunta = "whiskey"){
+        console.log(tipoWhiskey);
+    } else{
+        alert("no esxiste este tipo de bebida")
+    }
+    listo = prompt("quieres ver mas tipos de bebidas?").toLowerCase()
+} while (listo !== "no");
+
+
+
+
+*/
