@@ -64,7 +64,6 @@ const tipoGin = bebidas.filter((tipoBebida) => tipoBebida.tipo == "gin")
 const tipoWhiskey = bebidas.filter((tipoBebida) => tipoBebida.tipo == "whisky")
 
 let pregunta
-
 do {
     pregunta = parseFloat(prompt("que tipo de bebidas estas buscando? 1-fernet  2-vodka  3-ron  4-gin  5-whiskey"))
 
@@ -110,8 +109,11 @@ do {
 } while (listo !== "no");
 */
 
-
-
-
+//DESCUENTO A TODAS LAS BEBIDAS
+/*
+for (let i = 0; i < bebidas.length; i++) {
+    console.log(bebidas[i].aplicarDescuento(0.50));
+}
+*/
 
 
