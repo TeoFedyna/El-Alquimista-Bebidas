@@ -1,6 +1,6 @@
 // Validador para mayoria de edad
 let edad
-
+/*
 do {
     edad = parseInt(prompt("Que edad tiene ?"))
 
@@ -14,7 +14,7 @@ do {
         alert("Bienvenido a El Alquimista bebidas, porfavor elija su compra!!!")
     }
 } while (edad < 18 || edad > 99 || isNaN(edad));
-
+*/
 // Lista de productos
 
 class Producto {
@@ -63,24 +63,35 @@ const tipoRon = bebidas.filter((tipoBebida) => tipoBebida.tipo == "ron")
 const tipoGin = bebidas.filter((tipoBebida) => tipoBebida.tipo == "gin")
 const tipoWhiskey = bebidas.filter((tipoBebida) => tipoBebida.tipo == "whisky")
 
-let pregunta
-
 do {
-    pregunta = parseFloat(prompt("que tipo de bebidas estas buscando? 1-fernet  2-vodka  3-ron  4-gin  5-whiskey"))
+    let pregunta = parseFloat(prompt(`que tipo de bebidas estas buscando? 
+    1- fernet  
+    2- vodka  
+    3- ron  
+    4- gin  
+    5- whiskey`))
 
-    if (pregunta === 1) {
-        console.log(tipoFernet);
-    }else if (pregunta === 2) {
-        console.log(tipoVodka);
-    }else if (pregunta === 3) {
-        console.log(tipoRon);
-    }else if (pregunta === 4) {
-        console.log(tipoGin);
-    }else if (pregunta === 5){
-        console.log(tipoWhiskey);
-    } else{
-        alert("no esxiste este tipo de bebida")
+    switch (pregunta) {
+        case 1:
+            console.log(tipoFernet);
+            break;
+        case 2:
+            console.log(tipoVodka);
+            break;    
+        case 3:
+            console.log(tipoRon);
+            break;
+        case 4:
+            console.log(tipoGin);
+            break;
+        case 5:
+            console.log(tipoWhiskey);
+            break;
+        default:
+            alert("no esxiste este tipo de bebida")
+        break;
     }
+
     listo = prompt("quieres ver mas tipos de bebidas?").toLowerCase()
 } while (listo !== "no");
 
@@ -108,10 +119,9 @@ do {
     odenarBebidas(pregunta)
     listo = prompt("quieres ver mas tipos de bebidas?").toLowerCase()
 } while (listo !== "no");
+
+
+let nombre = (prompt("decime tu nombre")).toLowerCase()
+let apellido = "capo"
+console.log( alert(`hola ${nombre} como andas? la verdad que sos un ${apellido}`));
 */
-
-
-
-
-
-
