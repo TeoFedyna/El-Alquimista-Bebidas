@@ -56,6 +56,13 @@ const bebidas = [bebida1, bebida2, bebida3, bebida4, bebida5, bebida6, bebida7, 
 
 let carrito = []
 
+//DESCUENTO A TODAS LAS BEBIDAS
+/*
+for (let i = 0; i < bebidas.length; i++) {
+    console.log(bebidas[i].aplicarDescuento(0.50));
+}
+*/
+
 //FILTRO POR TIPO DE BEBIDAS
 const tipoFernet = bebidas.filter((tipoBebida) => tipoBebida.tipo == "fernet")
 const tipoVodka = bebidas.filter((tipoBebida) => tipoBebida.tipo == "vodka")
@@ -65,20 +72,32 @@ const tipoWhiskey = bebidas.filter((tipoBebida) => tipoBebida.tipo == "whisky")
 
 let pregunta
 do {
-    pregunta = parseFloat(prompt("que tipo de bebidas estas buscando? 1-fernet  2-vodka  3-ron  4-gin  5-whiskey"))
+    pregunta = parseFloat(prompt(`que tipo de bebidas estas buscando?
+    1- fernet  
+    2- vodka  
+    3- ron  
+    4- gin  
+    5- whiskey`))
 
-    if (pregunta === 1) {
-        console.log(tipoFernet);
-    }else if (pregunta === 2) {
-        console.log(tipoVodka);
-    }else if (pregunta === 3) {
-        console.log(tipoRon);
-    }else if (pregunta === 4) {
-        console.log(tipoGin);
-    }else if (pregunta === 5){
-        console.log(tipoWhiskey);
-    } else{
-        alert("no esxiste este tipo de bebida")
+    switch (pregunta) {
+        case 1:
+            console.log(tipoFernet);
+            break;
+        case 2:
+            onsole.log(tipoVodka);
+            break;
+        case 3:
+            console.log(tipoRon);
+            break;
+        case 4:
+            console.log(tipoGin);
+            break;
+        case 5:
+            console.log(tipoWhiskey);
+            break;
+        default:
+            alert("no esxiste este tipo de bebida")
+            break;
     }
     listo = prompt("quieres ver mas tipos de bebidas?").toLowerCase()
 } while (listo !== "no");
@@ -109,11 +128,5 @@ do {
 } while (listo !== "no");
 */
 
-//DESCUENTO A TODAS LAS BEBIDAS
-/*
-for (let i = 0; i < bebidas.length; i++) {
-    console.log(bebidas[i].aplicarDescuento(0.50));
-}
-*/
 
 
