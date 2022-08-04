@@ -1,18 +1,29 @@
 /* HEADER */
-.titulo {
-    text-align: center;
+header {
+    background-color: black;
 }
 
-/* BODY */
-.bebidas{
-    display: flex;
-    justify-content: space-between;
-    color: black;
-    background-color: chartreuse;
+.titulo {
+    text-align: center;
+    color: chartreuse;
+}
+
+/* MAIN */
+main {
+    background-color: black;
+}
+
+.card {
+    text-align: center;
     margin: 5px;
+    width: 100%;
 }
 
 .card-body {
-    color: black;
-    background-color: chartreuse;
+    padding: 300px;
+}
+
+.tituloMain {
+    text-align: center;
+    color: chartreuse;
 }
