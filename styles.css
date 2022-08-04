@@ -1,4 +1,12 @@
+/* HEADER */
+.titulo {
+    text-align: center;
+}
+
+/* BODY */
 .bebidas{
+    display: flex;
+    justify-content: space-between;
     color: black;
     background-color: chartreuse;
     margin: 5px;
