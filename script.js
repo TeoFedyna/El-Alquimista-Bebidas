@@ -73,15 +73,6 @@ bebidas.forEach(bebidasArray => {
     `
 });
 
-const divRedesaSociales = document.getElementById("redesSociales")
-
-divRedesaSociales.innerHTML +=`
-<div class="redes">
-<h1>buscame</h1>
-</div>
-
-`
-
 //EVENTOS
 
 
