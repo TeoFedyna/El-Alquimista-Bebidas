@@ -21,9 +21,17 @@ main {
     background-color: black;
 }
 
+#bebidas {
+    display: flex;
+    justify-content: space-around;
+}
+
 .card {
     margin: 5px;
     width: 100%;
+    display: grid;
+    margin-top: 15px;
+    margin-bottom: 50px;
 }
 
 .card-body {
@@ -32,4 +40,6 @@ main {
 
 .tituloMain {
     color: chartreuse;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
