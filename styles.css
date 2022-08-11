@@ -1,10 +1,18 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing:0;
+    text-align: center;
+}
+
 /* HEADER */
 header {
     background-color: black;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 
 .titulo {
-    text-align: center;
     color: chartreuse;
 }
 
@@ -14,7 +22,6 @@ main {
 }
 
 .card {
-    text-align: center;
     margin: 5px;
     width: 100%;
 }
@@ -24,6 +31,5 @@ main {
 }
 
 .tituloMain {
-    text-align: center;
     color: chartreuse;
 }

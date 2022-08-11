@@ -54,11 +54,10 @@ const bebida18 = new Producto(18, "whisky", "chivas regal 12 años", 5700)
 
 const bebidas = [bebida1, bebida2, bebida3, bebida4, bebida5, bebida6, bebida7, bebida8, bebida9, bebida10, bebida11, bebida12, bebida13, bebida14, bebida15, bebida16, bebida17, bebida18]
 
-
 let carrito = []
 
 //HTML DINAMICO
-const divBebidas = document.getElementById('bebidas')
+const divBebidas = document.getElementById("bebidas")
 
 bebidas.forEach(bebidasArray => {
     divBebidas.innerHTML += `
@@ -73,6 +72,19 @@ bebidas.forEach(bebidasArray => {
 
     `
 });
+
+const divRedesaSociales = document.getElementById("redesSociales")
+
+divRedesaSociales.innerHTML +=`
+<div class="redes">
+<h1>buscame</h1>
+</div>
+
+`
+
+//EVENTOS
+
+
 
 //DESCUENTO A TODAS LAS BEBIDAS
 /*
