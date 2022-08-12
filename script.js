@@ -26,35 +26,37 @@ class Producto {
 
     aumentarPrecio(porcentajeAumentado) {
         return this.precio *= (1 + porcentajeAumentado)
-    }
+    }                                              V
 
     aplicarDescuento(porcentajeDescuento) {
         return this.precio *= (1 - porcentajeDescuento)
     }
 }
 
-const bebida1 = new Producto(1, "fernet", "branca", 1000)
-const bebida2 = new Producto(2, "fernet", "branca menta", 1000)
-const bebida3 = new Producto(3, "vodka", "smirnoft", 1250)
-const bebida4 = new Producto(4, "vodka", "absolut", 3500)
-const bebida5 = new Producto(5, "vodka", "skyy", 980)
-const bebida6 = new Producto(6, "vodka", "grey goose", 9400)
-const bebida7 = new Producto(7, "ron", "havana club", 1900)
-const bebida8 = new Producto(8, "ron", "havana club 3 años blanco", 2100)
-const bebida9 = new Producto(9, "ron", "havana club 7 años", 4650)
-const bebida10 = new Producto(10, "ron", "malibu", 2100)
-const bebida11 = new Producto(11, "gin", "bombay", 4100)
-const bebida12 = new Producto(12, "gin", "bombay bramble raspberry blackberry", 5700)
-const bebida13 = new Producto(13, "gin", "beefeater", 3650)
-const bebida14 = new Producto(14, "gin", "tanqueray", 3100)
-const bebida15 = new Producto(15, "whisky", "jack daniels", 6890)
-const bebida16 = new Producto(16, "whisky", "grants triple wood", 6100)
-const bebida17 = new Producto(17, "whisky", "johnnie walker black label", 5100)
-const bebida18 = new Producto(18, "whisky", "chivas regal 12 años", 5700)
+const bebida1 = new Producto(1, "Fernet", "Branca", 1000)
+const bebida2 = new Producto(2, "Fernet", "Branca Menta", 1000)
+const bebida3 = new Producto(3, "Vodka", "Smirnoft", 1250)
+const bebida4 = new Producto(4, "Vodka", "Absolut", 3500)
+const bebida5 = new Producto(5, "Vodka", "Skyy", 980)
+const bebida6 = new Producto(6, "Vodka", "Grey Goose", 9400)
+const bebida7 = new Producto(7, "Ron", "Havana Club", 1900)
+const bebida8 = new Producto(8, "Ron", "Havana Club 3 años blanco", 2100)
+const bebida9 = new Producto(9, "Ron", "Havana Club 7 años", 4650)
+const bebida10 = new Producto(10, "Ron", "Malibu", 2100)
+const bebida11 = new Producto(11, "Gin", "Bombay", 4100)
+const bebida12 = new Producto(12, "Gin", "Bombay Bramble Raspberry Blackberry", 5700)
+const bebida13 = new Producto(13, "Gin", "Beefeater", 3650)
+const bebida14 = new Producto(14, "Gin", "Tanqueray", 3100)
+const bebida15 = new Producto(15, "Whisky", "Jack daniels", 6890)
+const bebida16 = new Producto(16, "Whisky", "Grants Triple Wood", 6100)
+const bebida17 = new Producto(17, "Whisky", "Johnnie walker Black Label", 5100)
+const bebida18 = new Producto(18, "Whisky", "Chivas Regal 12 años", 5700)
 
 const bebidas = [bebida1, bebida2, bebida3, bebida4, bebida5, bebida6, bebida7, bebida8, bebida9, bebida10, bebida11, bebida12, bebida13, bebida14, bebida15, bebida16, bebida17, bebida18]
 
 let carrito = []
+
+let listaDeDeseos = []
 
 //HTML DINAMICO
 const divBebidas = document.getElementById("bebidas")
@@ -66,7 +68,8 @@ bebidas.forEach(bebidasArray => {
             <h5 class="card-title"> ${bebidasArray.nombre}</h5>
             <p class="card-text">Tipo de bebida: ${bebidasArray.tipo}</p>
             <p class="card-text">Precio: $${bebidasArray.precio}</p>
-            <a href="#" class="btn btn-primary">Agregar al carrito</a>
+            <a href="#" id="carrito" class="btn btn-primary">Agregar al carrito</a>
+            <a href="#" id="wishList" class="btn btn-primary">Agregar a la lista de deseos</a>
         </div>
     </div>
 

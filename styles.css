@@ -38,6 +38,20 @@ main {
     padding: 300px;
 }
 
+#carrito {
+    background-color: chartreuse;
+    margin: 3px;
+    color: black;
+    border-color: black;
+}
+
+#wishList {
+    background-color: chartreuse;
+    margin: 3px;
+    color: black;
+    border-color: black;
+}
+
 .tituloMain {
     color: chartreuse;
     padding-top: 35px;
