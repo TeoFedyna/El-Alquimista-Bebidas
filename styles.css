@@ -16,29 +16,37 @@ header {
     color: chartreuse;
 }
 
+/*
+.d-flex {
+    max-width: 35rem;
+    align-content: center;
+}
+*/
+
+.carritoImg {
+    background-color: black;
+}
+
 /* MAIN */
 main {
     background-color: black;
 }
 
-#bebidas {
+#bebidas {    
     display: flex;
     justify-content: space-around;
 }
 
-.card {
-    margin: 5px;
-    width: 100%;
-    display: grid;
-    margin-top: 15px;
+
+.margen {
     margin-bottom: 50px;
 }
-
+/*
 .card-body {
     padding: 300px;
 }
-
-#carrito {
+*/
+.a {
     background-color: chartreuse;
     margin: 3px;
     color: black;
@@ -61,5 +69,5 @@ main {
 /* FOOTER */
 
 footer {
-    background-color: black;
+    background-color: chartreuse;
 }

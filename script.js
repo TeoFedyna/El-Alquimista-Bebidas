@@ -1,6 +1,7 @@
 // Validador para mayoria de edad
-let edad
 /*
+let edad
+
 do {
     edad = parseInt(prompt("Que edad tiene ?"))
 
@@ -26,7 +27,7 @@ class Producto {
 
     aumentarPrecio(porcentajeAumentado) {
         return this.precio *= (1 + porcentajeAumentado)
-    }                                              V
+    }                                              
 
     aplicarDescuento(porcentajeDescuento) {
         return this.precio *= (1 - porcentajeDescuento)
@@ -56,31 +57,64 @@ const bebidas = [bebida1, bebida2, bebida3, bebida4, bebida5, bebida6, bebida7, 
 
 let carrito = []
 
-let listaDeDeseos = []
+let wishList = []
 
 //HTML DINAMICO
 const divBebidas = document.getElementById("bebidas")
 
-bebidas.forEach(bebidasArray => {
+bebidas.forEach((bebidasArray, indice) => {
     divBebidas.innerHTML += `
-    <div class="card bebidas" id="bebida${bebidasArray.id}" style="width: 18rem;">
+    <div class="card margen bebidas" id="bebida${bebidasArray.id}" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title"> ${bebidasArray.nombre}</h5>
             <p class="card-text">Tipo de bebida: ${bebidasArray.tipo}</p>
             <p class="card-text">Precio: $${bebidasArray.precio}</p>
-            <a href="#" id="carrito" class="btn btn-primary">Agregar al carrito</a>
-            <a href="#" id="wishList" class="btn btn-primary">Agregar a la lista de deseos</a>
+            <a href="#" id="carrito${indice}" class="btn btn-primary carritoBtn ">Agregar al carrito</a>
+            <a href="#" id="wishList${indice}" class="btn btn-primary ">Agregar a la lista de deseos</a>
         </div>
     </div>
-
     `
 });
 
 //EVENTOS
 
+bebidas.forEach((bebida, indice) => {
+    const agregarCarrito = document.getElementById(`carrito${indice}`)
+    agregarCarrito.addEventListener("click", (e) => {
+        
+        carrito.push(bebida)
+        console.log(carrito);
+        //console.log(e.target.textContent);
+    })
+})
+
+bebidas.forEach((bebida, indice) => {
+    const agregarWishList = document.getElementById(`wishList${indice}`)
+    agregarWishList.addEventListener("click", () => {
+        
+        wishList.push(bebida)
+        console.log(wishList);
+    })
+})
+
+const iconoCarrito = document.getElementById('carritoButtom')
+
+iconoCarrito.addEventListener("click", () => {
+    
+    
+    carrito.forEach();
+})
 
 
-//DESCUENTO A TODAS LAS BEBIDAS
+const form = document.getElementById("form")
+
+form.addEventListener("submit", (pepe) =>{
+    pepe.preventDefault
+    console.log("hola");
+})
+
+
+//DESCUENTO A TODAS LAS BEBIDAS (agregar descuento a algunas bebidas y poner ul filtro para solo las que estab en descuento)
 /*
 for (let i = 0; i < bebidas.length; i++) {
     console.log(bebidas[i].aplicarDescuento(0.50));
