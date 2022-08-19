@@ -46,14 +46,7 @@ main {
     padding: 300px;
 }
 */
-.a {
-    background-color: chartreuse;
-    margin: 3px;
-    color: black;
-    border-color: black;
-}
-
-#wishList {
+.carritoYWishBtn {
     background-color: chartreuse;
     margin: 3px;
     color: black;

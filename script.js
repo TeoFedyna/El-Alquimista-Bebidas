@@ -69,8 +69,8 @@ bebidas.forEach((bebidasArray, indice) => {
             <h5 class="card-title"> ${bebidasArray.nombre}</h5>
             <p class="card-text">Tipo de bebida: ${bebidasArray.tipo}</p>
             <p class="card-text">Precio: $${bebidasArray.precio}</p>
-            <a href="#" id="carrito${indice}" class="btn btn-primary carritoBtn ">Agregar al carrito</a>
-            <a href="#" id="wishList${indice}" class="btn btn-primary ">Agregar a la lista de deseos</a>
+            <a href="#" id="carrito${indice}" class="btn btn-primary carritoYWishBtn">Agregar al carrito</a>
+            <a href="#" id="wishList${indice}" class="btn btn-primary carritoYWishBtn">Agregar a la lista de deseos</a>
         </div>
     </div>
     `
@@ -100,19 +100,18 @@ bebidas.forEach((bebida, indice) => {
 const iconoCarrito = document.getElementById('carritoButtom')
 
 iconoCarrito.addEventListener("click", () => {
-    
-    
     carrito.forEach();
 })
 
-
+/*
+EJEMPLO DE SUBMIT
 const form = document.getElementById("form")
 
 form.addEventListener("submit", (pepe) =>{
     pepe.preventDefault
     console.log("hola");
 })
-
+*/
 
 //DESCUENTO A TODAS LAS BEBIDAS (agregar descuento a algunas bebidas y poner ul filtro para solo las que estab en descuento)
 /*
