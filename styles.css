@@ -1,0 +1,66 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing:0;
+    text-align: center;
+}
+
+/* HEADER */
+header {
+    background-color: black;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.titulo {
+    color: chartreuse;
+}
+
+/*
+.d-flex {
+    max-width: 35rem;
+    align-content: center;
+}
+*/
+
+.carritoImg {
+    background-color: black;
+}
+
+/* MAIN */
+main {
+    background-color: black;
+}
+
+#bebidas {    
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.margen {
+    margin-bottom: 50px;
+}
+/*
+.card-body {
+    padding: 300px;
+}
+*/
+.carritoYWishBtn {
+    background-color: chartreuse;
+    margin: 3px;
+    color: black;
+    border-color: black;
+}
+
+.tituloMain {
+    color: chartreuse;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: chartreuse;
+}
