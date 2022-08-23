@@ -6,6 +6,7 @@
 }
 
 /* HEADER */
+
 header {
     background-color: black;
     padding-top: 35px;
@@ -14,17 +15,23 @@ header {
 
 .titulo {
     color: chartreuse;
+    text-align: center;
 }
 
-/*
-.d-flex {
-    max-width: 35rem;
-    align-content: center;
+.navBarBtn {
+    margin-right: 5px;
+    background-color: chartreuse;
 }
-*/
+
+
+.buscar-btn {
+background-color: chartreuse;
+color: black;
+}
+
 
 .carritoImg {
-    background-color: black;
+    background-color: chartreuse;
 }
 
 /* MAIN */
