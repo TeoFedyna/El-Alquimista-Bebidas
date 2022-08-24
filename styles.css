@@ -18,20 +18,49 @@ header {
     text-align: center;
 }
 
-.navBarBtn {
+/* side bar */
+.sideBarBtn {
     margin-right: 5px;
     background-color: chartreuse;
 }
 
+/* carrito */
 
-.buscar-btn {
-background-color: chartreuse;
-color: black;
+.carritoButtom {
+    margin-top: 5px;
+    border-radius: 5px;
 }
-
 
 .carritoImg {
     background-color: chartreuse;
+}
+
+.carritoHtml {
+    background-color:dimgray;
+    color: black;
+}
+
+.productoEnCarrito {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.boton-eliminar {
+    background-color: chartreuse;
+    border-radius: 5px;
+}
+.vaciar-carrito {
+    margin-bottom: 5px;
+    background-color: chartreuse;
+    color: black;
+    border-radius: 5px;
+}
+
+/* buscador */
+.buscar-btn {
+background-color: chartreuse;
+color: black;
 }
 
 /* MAIN */
@@ -44,15 +73,10 @@ main {
     justify-content: space-around;
 }
 
-
 .margen {
     margin-bottom: 50px;
 }
-/*
-.card-body {
-    padding: 300px;
-}
-*/
+
 .carritoYWishBtn {
     background-color: chartreuse;
     margin: 3px;
