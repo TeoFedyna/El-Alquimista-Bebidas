@@ -58,6 +58,15 @@ const bebidas = [bebida1, bebida2, bebida3, bebida4, bebida5, bebida6, bebida7, 
 
 let carrito = []
 
+//LOCAL STORAGE (getItem)
+document.addEventListener("DOMContentLoaded", () =>{
+    if (localStorage.getItem("carrito")) {
+        carrito = JSON.parse(localStorage.getItem("carrito"))
+        actualizarCarrito()
+    }
+})
+
+
 //HTML DINAMICO
 const divBebidas = document.getElementById("bebidas")
 
@@ -69,7 +78,6 @@ bebidas.forEach((bebidasArray, indice) => {
             <p class="card-text">Tipo de bebida: ${bebidasArray.tipo}</p>
             <p class="card-text">Precio: $${bebidasArray.precio}</p>
             <a href="#" id="carrito${indice}" class="btn btn-primary carritoYWishBtn">Agregar al carrito</a>
-            <a href="#" id="wishList${indice}" class="btn btn-primary carritoYWishBtn">Agregar a la lista de deseos</a>
         </div>
     </div>
     `
@@ -106,6 +114,9 @@ const actualizarCarrito = () => {
             <hr>
             `
             carritoContenedor.appendChild(div)
+            //LOCAL STORAGE (setItem)
+            localStorage.setItem("carrito", JSON.stringify(carrito))
+
         })
     precioTotal.innerText = carrito.reduce((acc, preduct) => acc + preduct.precio, 0)
 }
