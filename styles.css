@@ -5,7 +5,8 @@
     text-align: center;
 }
 
-/* HEADER */
+/*--------------- HEADER ---------------*/
+
 header {
     background-color: black;
     padding-top: 35px;
@@ -14,20 +15,56 @@ header {
 
 .titulo {
     color: chartreuse;
+    text-align: center;
 }
 
-/*
-.d-flex {
-    max-width: 35rem;
-    align-content: center;
+/* side bar */
+.sideBarBtn {
+    margin-right: 5px;
+    background-color: chartreuse;
 }
-*/
+
+/* carrito */
+
+.carritoButtom {
+    border-radius: 5px;
+    border-color: black;
+}
 
 .carritoImg {
-    background-color: black;
+    background-color: chartreuse;
 }
 
-/* MAIN */
+.carritoCuerpo {
+    background-color:dimgray;
+    color: black;
+    /*display: none;*/
+}
+
+.productoEnCarrito {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.boton-eliminar {
+    background-color: chartreuse;
+    border-radius: 5px;
+}
+.vaciar-carrito {
+    margin-bottom: 5px;
+    background-color: chartreuse;
+    color: black;
+    border-radius: 5px;
+}
+
+/* buscador */
+.buscar-btn {
+background-color: chartreuse;
+color: black;
+}
+
+/*--------------- MAIN ---------------*/
 main {
     background-color: black;
 }
@@ -37,15 +74,10 @@ main {
     justify-content: space-around;
 }
 
-
 .margen {
     margin-bottom: 50px;
 }
-/*
-.card-body {
-    padding: 300px;
-}
-*/
+
 .carritoYWishBtn {
     background-color: chartreuse;
     margin: 3px;
@@ -59,8 +91,23 @@ main {
     padding-bottom: 35px;
 }
 
-/* FOOTER */
+/*--------------- FOOTER ---------------*/
 
-footer {
+.footer {
     background-color: chartreuse;
+}
+
+.redesSociales {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.linkedinImg{
+max-width: 350px;
+}
+
+.githubImg{
+max-width: 200px;
+margin-bottom: 5px;
 }
