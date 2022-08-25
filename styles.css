@@ -27,17 +27,18 @@ header {
 /* carrito */
 
 .carritoButtom {
-    margin-top: 5px;
     border-radius: 5px;
+    border-color: black;
 }
 
 .carritoImg {
     background-color: chartreuse;
 }
 
-.carritoHtml {
+.carritoCuerpo {
     background-color:dimgray;
     color: black;
+    /*display: none;*/
 }
 
 .productoEnCarrito {
