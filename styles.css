@@ -93,6 +93,21 @@ main {
 
 /*--------------- FOOTER ---------------*/
 
-footer {
+.footer {
     background-color: chartreuse;
+}
+
+.redesSociales {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.linkedinImg{
+max-width: 350px;
+}
+
+.githubImg{
+max-width: 200px;
+margin-bottom: 5px;
 }
