@@ -19,12 +19,12 @@ do {
 // Lista de productos
 
 class Producto {
-    constructor(id, tipo = "", nombre = "", precio = 900, cantidad = 1) {
-        this.id = id;
+    constructor(tipo = "", nombre = "", precio = 900, cantidad = 1, id) {
         this.tipo = tipo;
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad = cantidad;
+        this.id = id;
     }
 
     aumentarPrecio(porcentajeAumentado) {
@@ -36,37 +36,37 @@ class Producto {
     }
 }
 
-const bebida1 = new Producto(1, "Fernet", "Branca", 1000, 1)
-const bebida2 = new Producto(2, "Fernet", "Branca Menta", 1000, 1)
-const bebida3 = new Producto(3, "Vodka", "Smirnoft", 1250, 1)
-const bebida4 = new Producto(4, "Vodka", "Absolut", 3500, 1)
-const bebida5 = new Producto(5, "Vodka", "Skyy", 980, 1)
-const bebida6 = new Producto(6, "Vodka", "Grey Goose", 9400, 1)
-const bebida7 = new Producto(7, "Ron", "Havana Club", 1900, 1)
-const bebida8 = new Producto(8, "Ron", "Havana Club 3 años blanco", 2100, 1)
-const bebida9 = new Producto(9, "Ron", "Havana Club 7 años", 4650, 1)
-const bebida10 = new Producto(10, "Ron", "Malibu", 2100, 1)
-const bebida11 = new Producto(11, "Gin", "Bombay", 4100, 1)
-const bebida12 = new Producto(12, "Gin", "Bombay Bramble Raspberry Blackberry", 5700, 1)
-const bebida13 = new Producto(13, "Gin", "Beefeater", 3650, 1)
-const bebida14 = new Producto(14, "Gin", "Tanqueray", 3100, 1)
-const bebida15 = new Producto(15, "Whisky", "Jack daniels", 6890, 1)
-const bebida16 = new Producto(16, "Whisky", "Grants Triple Wood", 6100, 1)
-const bebida17 = new Producto(17, "Whisky", "Johnnie walker Black Label", 5100, 1)
-const bebida18 = new Producto(18, "Whisky", "Chivas Regal 12 años", 5700, 1)
+const bebida1 = new Producto("Fernet", "Branca", 1000, 1, 1)
+const bebida2 = new Producto("Fernet", "Branca Menta", 1000, 1, 2)
+const bebida3 = new Producto("Vodka", "Smirnoft", 1250, 1, 3)
+const bebida4 = new Producto("Vodka", "Absolut", 3500, 1, 4)
+const bebida5 = new Producto("Vodka", "Skyy", 980, 1, 5)
+const bebida6 = new Producto("Vodka", "Grey Goose", 9400, 1, 6)
+const bebida7 = new Producto("Ron", "Havana Club", 1900, 1, 7)
+const bebida8 = new Producto("Ron", "Havana Club 3 años blanco", 2100, 1, 8)
+const bebida9 = new Producto("Ron", "Havana Club 7 años", 4650, 1, 9)
+const bebida10 = new Producto("Ron", "Malibu", 2100, 1, 10)
+const bebida11 = new Producto("Gin", "Bombay", 4100, 1, 11)
+const bebida12 = new Producto("Gin", "Bombay Bramble Raspberry Blackberry", 5700, 1, 12)
+const bebida13 = new Producto("Gin", "Beefeater", 3650, 1, 13)
+const bebida14 = new Producto("Gin", "Tanqueray", 3100, 1, 14)
+const bebida15 = new Producto("Whisky", "Jack daniels", 6890, 1, 15)
+const bebida16 = new Producto("Whisky", "Grants Triple Wood", 6100, 1, 16)
+const bebida17 = new Producto("Whisky", "Johnnie walker Black Label", 5100, 1, 17)
+const bebida18 = new Producto("Whisky", "Chivas Regal 12 años", 5700, 1, 18)
 
 const bebidas = [bebida1, bebida2, bebida3, bebida4, bebida5, bebida6, bebida7, bebida8, bebida9, bebida10, bebida11, bebida12, bebida13, bebida14, bebida15, bebida16, bebida17, bebida18]
 
 let carrito = []
 
 //LOCAL STORAGE (getItem)
+
 document.addEventListener("DOMContentLoaded", () =>{
     if (localStorage.getItem("carrito")) {
         carrito = JSON.parse(localStorage.getItem("carrito"))
         actualizarCarrito()
     }
 })
-
 
 //HTML DINAMICO
 const divBebidas = document.getElementById("bebidas")
@@ -93,7 +93,6 @@ bebidas.forEach((bebida, indice) => {
         e.preventDefault()
         carrito.push(bebida)
         actualizarCarrito()
-        console.log(carrito);
         //console.log(e.target.textContent);
     })
 })
@@ -102,6 +101,9 @@ const carritoContenedor = document.getElementById("carrito-contenedor")
 const precioTotal = document.getElementById("precioTotal")
 
 const actualizarCarrito = () => {
+    //LOCAL STORAGE (setItem)
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+
     carritoContenedor.innerHTML = ""
     
     carrito.forEach((product) => {
@@ -115,17 +117,15 @@ const actualizarCarrito = () => {
             <hr>
             `
             carritoContenedor.appendChild(div)
-            //LOCAL STORAGE (setItem)
-            localStorage.setItem("carrito", JSON.stringify(carrito))
-
         })
+    console.log(carrito);
     precioTotal.innerText = carrito.reduce((acc, preduct) => acc + preduct.precio, 0)
 }
 
 // eliminar del carrito
 
 const eliminarDelCarrito = (productId) => {
-    const item = carrito.find((product) => product.id ===productId)
+    const item = carrito.find((product) => product.id === productId)
     const indice1 = carrito.indexOf(item)
     carrito.splice(indice1, 1)
     actualizarCarrito()
@@ -139,8 +139,6 @@ botonVaciar.addEventListener("click", () =>{
     carrito.length = 0
     actualizarCarrito()
 })
-
-
 
 /*
 EJEMPLO DE SUBMIT
