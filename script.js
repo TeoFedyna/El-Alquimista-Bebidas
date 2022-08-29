@@ -5,7 +5,7 @@ const swalWithBootstrapButtons = Swal.mixin({
         cancelButton: 'btn btn-danger'
     },
     buttonsStyling: false
-    })
+})
 
 swalWithBootstrapButtons.fire({
     title: 'Are you sure?',
@@ -18,16 +18,17 @@ swalWithBootstrapButtons.fire({
 }).then((result) => {
     if (result.isConfirmed) {
         swalWithBootstrapButtons.fire(
-        'Deleted!',
-        'Your file has been deleted.',
-        'success'
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
         )
-    } else if (result.dismiss === Swal.DismissReason.cancel){
-    swalWithBootstrapButtons.fire(
-        'Cancelled',
-        'Your imaginary file is safe :)',
-        'error'
-        )}
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+        swalWithBootstrapButtons.fire(
+            'Cancelled',
+            'Your imaginary file is safe :)',
+            'error'
+        )
+    }
 })
 
 // Lista de productos
@@ -75,7 +76,7 @@ let carrito = []
 
 //LOCAL STORAGE (getItem)
 
-document.addEventListener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("carrito")) {
         carrito = JSON.parse(localStorage.getItem("carrito"))
         actualizarCarrito()
@@ -119,19 +120,19 @@ const actualizarCarrito = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito))
 
     carritoContenedor.innerHTML = ""
-    
+
     carrito.forEach((product) => {
-            const div = document.createElement("div")
-            div.className = ("productoEnCarrito")
-            div.innerHTML = `
+        const div = document.createElement("div")
+        div.className = ("productoEnCarrito")
+        div.innerHTML = `
             <p>${product.tipo} ${product.nombre}</p>
             <p>Precio: ${product.precio}</p>
             <p>Cantidad: <span id="cantidad">${product.cantidad}</span></p>
             <div class="divButton"><button onclick = "eliminarDelCarrito(${product.id})" class="boton-eliminar"><img class="eliminarImg" src="./images/can-trash_110351.png"></img></button></div>
             <hr>
             `
-            carritoContenedor.appendChild(div)
-        })
+        carritoContenedor.appendChild(div)
+    })
     console.log(carrito);
     precioTotal.innerText = carrito.reduce((acc, preduct) => acc + preduct.precio, 0)
 }
@@ -149,7 +150,7 @@ const eliminarDelCarrito = (productId) => {
 
 const botonVaciar = document.getElementById("vaciar-carrito")
 
-botonVaciar.addEventListener("click", () =>{
+botonVaciar.addEventListener("click", () => {
     carrito.length = 0
     actualizarCarrito()
 })
