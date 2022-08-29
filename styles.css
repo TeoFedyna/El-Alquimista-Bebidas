@@ -24,6 +24,13 @@ header {
     background-color: chartreuse;
 }
 
+.offcanvas-header {
+align-items: inherit !important;
+}
+.offcanvas {
+    overflow: scroll;
+}
+
 /* carrito */
 
 .carritoButtom {
@@ -43,13 +50,24 @@ header {
 
 .productoEnCarrito {
     display: flex;
-    flex-direction: column;
+    gap: 1rem;
+    margin-top: 5px;
+    margin-bottom: 5px
 
+}
+.carritoHtml{
+ width: 100%;
+}
+
+.btn-close {
+    position: relative;
+    top:  10px;
 }
 
 .boton-eliminar {
     background-color: chartreuse;
     border-radius: 5px;
+    padding: 10px;
 }
 .vaciar-carrito {
     margin-bottom: 5px;

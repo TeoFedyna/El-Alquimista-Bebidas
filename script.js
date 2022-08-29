@@ -113,7 +113,7 @@ const actualizarCarrito = () => {
             <p>${product.tipo} ${product.nombre}</p>
             <p>Precio: ${product.precio}</p>
             <p>Cantidad: <span id="cantidad">${product.cantidad}</span></p>
-            <div><button onclick = "eliminarDelCarrito(${product.id})" class="boton-eliminar"><img class="eliminarImg" src="./images/can-trash_110351.png"></img></button></div>
+            <div class="divButton"><button onclick = "eliminarDelCarrito(${product.id})" class="boton-eliminar"><img class="eliminarImg" src="./images/can-trash_110351.png"></img></button></div>
             <hr>
             `
             carritoContenedor.appendChild(div)
