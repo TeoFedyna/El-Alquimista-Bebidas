@@ -5,27 +5,27 @@ const swalWithBootstrapButtons = Swal.mixin({
         cancelButton: 'btn btn-danger'
     },
     buttonsStyling: false
-    })
+})
 
 swalWithBootstrapButtons.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
+    title: 'Sos mayor de edad?',
+    text: "Debes ser mayor de 18 años para comprar bebidas alcoholicas",
     icon: 'warning',
     showCancelButton: true,
-    confirmButtonText: 'Yes, delete it!',
-    cancelButtonText: 'No, cancel!',
+    confirmButtonText: 'Si, soy mayor de edad',
+    cancelButtonText: 'No, soy menor de edad',
     reverseButtons: true
 }).then((result) => {
     if (result.isConfirmed) {
         swalWithBootstrapButtons.fire(
-        'Deleted!',
-        'Your file has been deleted.',
+        'Genial!',
+        'Disfruta tu estadia en nuestra pagina',
         'success'
         )
     } else if (result.dismiss === Swal.DismissReason.cancel){
     swalWithBootstrapButtons.fire(
-        'Cancelled',
-        'Your imaginary file is safe :)',
+        'Lo sentimos',
+        'Pero no puedes comprar bebidas alcoholicas',
         'error'
         )}
 })
