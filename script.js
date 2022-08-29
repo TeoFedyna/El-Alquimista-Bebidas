@@ -1,4 +1,4 @@
-// Validador para mayoria de edad
+// Validador para mayoria de edad (libreria sweetaler2)
 const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
         confirmButton: 'btn btn-success',
@@ -31,6 +31,7 @@ swalWithBootstrapButtons.fire({
 })
 
 // Lista de productos
+
 class Producto {
     constructor(tipo = "", nombre = "", precio = 900, cantidad = 1, id) {
         this.tipo = tipo;
@@ -126,7 +127,7 @@ const actualizarCarrito = () => {
             <p>${product.tipo} ${product.nombre}</p>
             <p>Precio: ${product.precio}</p>
             <p>Cantidad: <span id="cantidad">${product.cantidad}</span></p>
-            <div><button onclick = "eliminarDelCarrito(${product.id})" class="boton-eliminar"><img class="eliminarImg" src="./images/can-trash_110351.png"></img></button></div>
+            <div class="divButton"><button onclick = "eliminarDelCarrito(${product.id})" class="boton-eliminar"><img class="eliminarImg" src="./images/can-trash_110351.png"></img></button></div>
             <hr>
             `
             carritoContenedor.appendChild(div)
@@ -162,9 +163,8 @@ form.addEventListener("submit", (pepe) =>{
     console.log("hola");
 })
 */
-
-//DESCUENTO A TODAS LAS BEBIDAS (agregar descuento a algunas bebidas y poner ul filtro para solo las que estab en descuento)
 /*
+//DESCUENTO A TODAS LAS BEBIDAS (agregar descuento a algunas bebidas y poner ul filtro para solo las que estab en descuento)
 for (let i = 0; i < bebidas.length; i++) {
     console.log(bebidas[i].aplicarDescuento(0.50));
 }
@@ -191,8 +191,8 @@ do {
             console.log(tipoFernet);
             break;
         case 2:
-            onsole.log(tipoVodka);
-            break;
+            console.log(tipoVodka);
+            break;    
         case 3:
             console.log(tipoRon);
             break;
@@ -204,11 +204,10 @@ do {
             break;
         default:
             alert("no esxiste este tipo de bebida")
-            break;
+        break;
     }
+
     listo = prompt("quieres ver mas tipos de bebidas?").toLowerCase()
 } while (listo !== "no");
 */
-
-
 
