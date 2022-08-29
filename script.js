@@ -1,21 +1,35 @@
 // Validador para mayoria de edad
-/*
-let edad
+const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+    },
+    buttonsStyling: false
+    })
 
-do {
-    edad = parseInt(prompt("Que edad tiene ?"))
+swalWithBootstrapButtons.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, delete it!',
+    cancelButtonText: 'No, cancel!',
+    reverseButtons: true
+}).then((result) => {
+    if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+        )
+    } else if (result.dismiss === Swal.DismissReason.cancel){
+    swalWithBootstrapButtons.fire(
+        'Cancelled',
+        'Your imaginary file is safe :)',
+        'error'
+        )}
+})
 
-    if (edad < 18) {
-        alert("Lo sentimos pero debe ser mayor de 18 para entrar")
-    } else if (isNaN(edad)) {
-        alert("Porfavor ingrese su edad de forma numerica")
-    } else if (edad > 99) {
-        alert("Lo sentimos pero esta demasiado mayor para un trago ;)")
-    } else {
-        alert("Bienvenido a El Alquimista bebidas, porfavor elija su compra!!!")
-    }
-} while (edad < 18 || edad > 99 || isNaN(edad));
-*/
 // Lista de productos
 class Producto {
     constructor(tipo = "", nombre = "", precio = 900, cantidad = 1, id) {
