@@ -1,4 +1,5 @@
-// Validador para mayoria de edad (libreria sweetaler2)
+// Validador para mayoria de edad (libreria sweetaler2) EN PROGRESO
+
 const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
         confirmButton: 'btn btn-success',
@@ -7,28 +8,61 @@ const swalWithBootstrapButtons = Swal.mixin({
     buttonsStyling: false
 })
 
-swalWithBootstrapButtons.fire({
-    title: 'Sos mayor de edad?',
-    text: "Debes ser mayor de 18 años para comprar bebidas alcoholicas",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonText: 'Si, soy mayor de edad',
-    cancelButtonText: 'No, soy menor de edad',
-    reverseButtons: true
-}).then((result) => {
-    if (result.isConfirmed) {
-        swalWithBootstrapButtons.fire(
-        'Genial!',
-        'Disfruta tu estadia en nuestra pagina',
-        'success'
-        )
-    } else if (result.dismiss === Swal.DismissReason.cancel){
+let edad = localStorage.getItem("edad") ?? ""
+
+if (edad === "") {
+    swalWithBootstrapButtons.fire({
+        title: 'Eres mayor de edad?',
+        text: "Debes ser mayor de 18 años para comprar bebidas alcoholicas",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, soy mayor de edad',
+        cancelButtonText: 'No, soy menor de edad',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            swalWithBootstrapButtons.fire(
+                'Genial!',
+                'Disfruta tu estadia en nuestra pagina',
+                'success'
+            )
+            localStorage.setItem("edad", "mayorEdad")
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            swalWithBootstrapButtons.fire(
+                'Lo sentimos',
+                'Pero no puedes comprar bebidas alcoholicas',
+                'error'
+            )
+            localStorage.setItem("edad", "menorEdad")
+            
+            const pene = document.getElementById("bebidas")
+            
+            pene.setAttribute("hidden", "true")
+        }
+    })
+}
+
+if (edad === "menorEdad") {
     swalWithBootstrapButtons.fire(
         'Lo sentimos',
-        'Pero no puedes comprar bebidas alcoholicas',
+        'Pero nos has indicado que eres menor de edad',
         'error'
-        )}
-})
+    )
+    const pene = document.getElementById("bebidas")
+    
+    pene.setAttribute("hidden", "true")
+}
+
+// Clase clientes
+
+class Cliente {
+    constructor(nombre = "", apellido = "", correoElectronico = "", direccion = "") {
+        this.nombre = nombre
+        this.apellido = apellido
+        this.correoElectronico = correoElectronico
+        this.direccion = direccion
+    }
+}
 
 // Lista de productos
 
@@ -75,7 +109,7 @@ let carrito = []
 
 //LOCAL STORAGE (getItem)
 
-document.addEventListener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("carrito")) {
         carrito = JSON.parse(localStorage.getItem("carrito"))
         actualizarCarrito()
@@ -92,7 +126,7 @@ bebidas.forEach((bebidasArray, indice) => {
             <h5 class="card-title"> ${bebidasArray.nombre}</h5>
             <p class="card-text">Tipo de bebida: ${bebidasArray.tipo}</p>
             <p class="card-text">Precio: $${bebidasArray.precio}</p>
-            <a href="#" id="carrito${indice}" class="btn btn-primary carritoYWishBtn">Agregar al carrito</a>
+            <button href="#" id="carrito${indice}" class="btn btn-primary carritoYWishBtn">Agregar al carrito</button>
         </div>
     </div>
     `
@@ -104,10 +138,23 @@ bebidas.forEach((bebidasArray, indice) => {
 bebidas.forEach((bebida, indice) => {
     const agregarCarrito = document.getElementById(`carrito${indice}`)
     agregarCarrito.addEventListener("click", (e) => {
+        // libreria toastify
+        Toastify({
+            text: `se agrego al carrito: ${bebida.tipo} ${bebida.nombre}`,
+            duration: 3000,
+            gravity: "bottom", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "linear-gradient(to left, #365433, #4BFF01)",
+            },
+            onClick: function () { } // Callback after click
+        }).showToast();
+
         e.preventDefault()
         carrito.push(bebida)
         actualizarCarrito()
-        //console.log(e.target.textContent);
+        //console.log(e.target.textContent);  
     })
 })
 
@@ -119,19 +166,19 @@ const actualizarCarrito = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito))
 
     carritoContenedor.innerHTML = ""
-    
+
     carrito.forEach((product) => {
-            const div = document.createElement("div")
-            div.className = ("productoEnCarrito")
-            div.innerHTML = `
-            <p>${product.tipo} ${product.nombre}</p>
-            <p>Precio: ${product.precio}</p>
-            <p>Cantidad: <span id="cantidad">${product.cantidad}</span></p>
-            <div class="divButton"><button onclick = "eliminarDelCarrito(${product.id})" class="boton-eliminar"><img class="eliminarImg" src="./images/can-trash_110351.png"></img></button></div>
-            <hr>
-            `
-            carritoContenedor.appendChild(div)
-        })
+        const div = document.createElement("div")
+        div.className = ("productoEnCarrito")
+        div.innerHTML = `
+        <p>${product.tipo} ${product.nombre}</p>
+        <p>Precio: ${product.precio}</p>
+        <p>Cantidad: <span id="cantidad">${product.cantidad}</span></p>
+        <div class="divButton"><button onclick = "eliminarDelCarrito(${product.id})" class="boton-eliminar"><img class="eliminarImg" src="./images/can-trash_110351.png"></img></button></div>
+        <hr>
+        `
+        carritoContenedor.appendChild(div)
+    })
     console.log(carrito);
     precioTotal.innerText = carrito.reduce((acc, preduct) => acc + preduct.precio, 0)
 }
@@ -149,11 +196,38 @@ const eliminarDelCarrito = (productId) => {
 
 const botonVaciar = document.getElementById("vaciar-carrito")
 
-botonVaciar.addEventListener("click", () =>{
+botonVaciar.addEventListener("click", () => {
     carrito.length = 0
     actualizarCarrito()
 })
 
+// finalizar compra 
+/*
+const botonCompra = document.getElementById("boton-compra")
+
+botonCompra.addEventListener("click", () =>{
+    
+    
+    Swal.fire({
+        title: "Datos del comprador:",
+        text: "Nombre:",
+        input: 'text',
+        text: "Apellidos",
+        input: 'text',
+        text: "Correo electronico:",
+        input: 'text',
+        text: "Direccion:",
+        input: 'text',
+        showCancelButton: true,
+        confirmButtonText: "Finalizar compra",
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below 
+        if (result.isConfirmed) {
+            Swal.fire("Compra finalizada")
+        }
+    })
+})
+*/
 /*
 EJEMPLO DE SUBMIT
 const form = document.getElementById("form")

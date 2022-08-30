@@ -5,6 +5,15 @@
     text-align: center;
 }
 
+/*--------------- VALIDADOR DE EDAD (sweetalert2) ---------------*/
+.swal2-cancel{
+    margin-right: 5px;
+}
+
+.swal2-confirm{
+    margin-left: 5px;
+}
+
 /*--------------- HEADER ---------------*/
 
 header {
@@ -71,6 +80,15 @@ align-items: inherit !important;
 }
 .vaciar-carrito {
     margin-bottom: 5px;
+    margin-right: 5px;
+    background-color: chartreuse;
+    color: black;
+    border-radius: 5px;
+}
+
+.boton-compra {
+    margin-bottom: 5px;
+    margin-left: 5px;
     background-color: chartreuse;
     color: black;
     border-radius: 5px;
