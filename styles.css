@@ -91,6 +91,16 @@ align-items: inherit !important;
     border-radius: 5px;
 }
 
+/*--------------- modal comprar ---------------*/
+.fCompra {
+    background-color: chartreuse;
+    border-color: #000000;
+}
+
+.cancelar {
+    border-color: #000000;
+}
+
 /*--------------- MAIN ---------------*/
 main {
     background-color: black;
