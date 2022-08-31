@@ -1,174 +1,174 @@
 * {
-    padding:0;
-    margin:0;
-    box-sizing:0;
-    text-align: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+  text-align: center;
 }
 
 /*--------------- VALIDADOR DE EDAD (sweetalert2) ---------------*/
-.swal2-cancel{
-    margin-right: 5px;
+.swal2-cancel {
+  margin-right: 5px;
 }
 
-.swal2-confirm{
-    margin-left: 5px;
+.swal2-confirm {
+  margin-left: 5px;
 }
 
 /*--------------- HEADER ---------------*/
 
 header {
-    background-color: black;
-    padding-top: 35px;
-    padding-bottom: 35px;
+  background-color: black;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 .titulo {
-    color: chartreuse;
-    text-align: center;
+  color: chartreuse;
+  text-align: center;
 }
 
 /* side bar */
 .sideBarBtn {
-    margin-right: 5px;
-    background-color: chartreuse;
+  margin-right: 5px;
+  background-color: chartreuse;
 }
 
 .offcanvas-header {
-align-items: inherit !important;
+  align-items: inherit !important;
 }
 .offcanvas {
-    overflow: scroll;
-    
+  overflow: scroll;
 }
 
 /* carrito */
 .carritoImg {
-    background-color: chartreuse;
+  background-color: chartreuse;
 }
 
 .carrito-titulo {
-    color: chartreuse;
-    text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px -2px 0 #000000,;
+  color: chartreuse;
+  text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px -2px 0 #000000;
 }
 .carritoCuerpo {
-    background-color:dimgray;
-    color: black;
-    /*display: none;*/
+  background-color: dimgray;
+  color: black;
+  /*display: none;*/
 }
 
 .productoEnCarrito {
-    display: flex;
-    gap: 1rem;
-    margin-top: 5px;
-    margin-bottom: 5px
+  display: flex;
+  gap: 1rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-.carritoHtml{
-    width: 100%;
+.carritoHtml {
+  width: 100%;
 }
 
 .btn-close {
-    position: relative;
-    top:  10px;
+  position: relative;
+  top: 10px;
 }
 
 .boton-eliminar {
-    background-color: chartreuse;
-    border-radius: 5px;
-    padding: 10px;
+  background-color: chartreuse;
+  border-radius: 5px;
+  padding: 10px;
 }
 .vaciar-carrito {
-    margin-bottom: 5px;
-    margin-right: 5px;
-    background-color: chartreuse;
-    color: black;
-    border-radius: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  background-color: chartreuse;
+  color: black;
+  border-radius: 5px;
 }
 
 .boton-compra {
-    margin-bottom: 5px;
-    margin-left: 5px;
-    background-color: chartreuse;
-    color: black;
-    border-radius: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  background-color: chartreuse;
+  color: black;
+  border-radius: 5px;
 }
 
 /*--------------- MAIN ---------------*/
-main { 
-    padding: 60px;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(100,100,100,1) 100%);
-    padding-top: 0px;
-    justify-content: center;
+main {
+  padding: 60px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(100, 100, 100, 1) 100%
+  );
+  padding-top: 0px;
+  justify-content: center;
 }
 
 .bebidasList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
 
 .card {
-    margin-bottom: 50px;
-    border-radius: 11px;
-    background-color: rgba(100, 100 , 100, 0.8);
-    color: white;
-    box-shadow:  0px 10px 30px 0px rgba(100,100,100,0.4);
-
+  margin-bottom: 50px;
+  border-radius: 11px;
+  background-color: rgba(100, 100, 100, 0.8);
+  color: white;
+  box-shadow: 0px 10px 30px 0px rgba(100, 100, 100, 0.4);
 }
 
-
 .card img {
-    object-fit: contain;
-    width: auto;
-    height: 250px;
+  object-fit: contain;
+  width: auto;
+  height: 250px;
 }
 
 .card button {
-    border: none;
-    font-family: Helvetica, sans-serif;
-    font-weight: 600;
-    padding: 3%;
-    width: 100%;
-    border-radius: 11px;
+  border: none;
+  font-family: Helvetica, sans-serif;
+  font-weight: 600;
+  padding: 3%;
+  width: 100%;
+  border-radius: 11px;
 }
 
 .card button:hover {
-    background-color: black;
-    color:chartreuse
+  background-color: black;
+  color: chartreuse;
 }
 
-
 .carritoYWishBtn {
-    background-color: chartreuse;
-    margin: 3px;
-    color: black;
-    border-color: black;
+  background-color: chartreuse;
+  margin: 3px;
+  color: black;
+  border-color: black;
 }
 
 .tituloMain {
-    color: chartreuse;
-    padding-top: 35px;
-    padding-bottom: 35px;
+  color: chartreuse;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 /*--------------- FOOTER ---------------*/
 
 .footer {
-    background-color: chartreuse;
+  background-color: chartreuse;
 }
 
 .redesSociales {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.linkedinImg{
-max-width: 350px;
+.linkedinImg {
+  max-width: 350px;
 }
 
-.githubImg{
-max-width: 200px;
-margin-bottom: 5px;
+.githubImg {
+  max-width: 200px;
+  margin-bottom: 5px;
 }
