@@ -26,17 +26,18 @@
 
         <button class="navbar-toggler btn sideBarBtn" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-            <span class="navbar-toggler-icon"></span>
+            <img class="carritoImg" src="./images/shopping_cart_market_ecommerce_icon_144576.png" title="">
         </button>
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
             aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-                <div class="carritoHtml p-dropdown-click">
-                    <button id="carritoButtom p-buttom" class="carritoButtom" type="button"><img class="carritoImg"
-                            src="./images/shopping_cart_market_ecommerce_icon_144576.png" title=""></button>
-
-                    <div class="carritoCuerpo p-dropdown-content p-bar-block p-animated-zoom">
-                        <div id="carrito-contenedor">
+                <div class="carritoHtml ">
+                    <!-- <button id="carritoButtom p-buttom" class="carritoButtom" type="button"><img class="carritoImg" src="./images/shopping_cart_market_ecommerce_icon_144576.png" title=""></button>-->
+                    
+                    <h1 class="carrito-titulo">Carrito</h1>
+                    
+                    <div class="carritoCuerpo">
+                        <div id="carrito-contenedor" class="carrito-contenedor">
 
                         </div>
 
@@ -74,46 +75,6 @@
 
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
-            </div>
-
-            <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    </li>
-                    <li class="nav-item dropdown tipoDeBebida">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Tipos de bebidas
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#">Fernet</a></li>
-                            <hr class="dropdown-divider">
-                            <li><a class="dropdown-item" href="#">Vodka</a></li>
-                            <hr class="dropdown-divider">
-                            <li><a class="dropdown-item" href="#">Ron</a></li>
-                            <hr class="dropdown-divider">
-                            <li><a class="dropdown-item" href="#">Gin</a></li>
-                            <hr class="dropdown-divider">
-                            <li><a class="dropdown-item" href="#">Whiskey</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown ordenarPor">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Ordenar de
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#">Menor precio a mayor precio</a></li>
-                            <hr class="dropdown-divider">
-                            <li><a class="dropdown-item" href="#">Mayor precio a menor precio</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <form class="d-flex buscador" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success buscar-btn" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </header>
