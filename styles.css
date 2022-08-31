@@ -5,6 +5,15 @@
     text-align: center;
 }
 
+/*--------------- VALIDADOR DE EDAD (sweetalert2) ---------------*/
+.swal2-cancel{
+    margin-right: 5px;
+}
+
+.swal2-confirm{
+    margin-left: 5px;
+}
+
 /*--------------- HEADER ---------------*/
 
 header {
@@ -32,16 +41,14 @@ align-items: inherit !important;
 }
 
 /* carrito */
-
-.carritoButtom {
-    border-radius: 5px;
-    border-color: black;
-}
-
 .carritoImg {
     background-color: chartreuse;
 }
 
+.carrito-titulo {
+    color: chartreuse;
+    text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px -2px 0 #000000,;
+}
 .carritoCuerpo {
     background-color:dimgray;
     color: black;
@@ -53,7 +60,6 @@ align-items: inherit !important;
     gap: 1rem;
     margin-top: 5px;
     margin-bottom: 5px
-
 }
 .carritoHtml{
     width: 100%;
@@ -71,15 +77,18 @@ align-items: inherit !important;
 }
 .vaciar-carrito {
     margin-bottom: 5px;
+    margin-right: 5px;
     background-color: chartreuse;
     color: black;
     border-radius: 5px;
 }
 
-/* buscador */
-.buscar-btn {
-background-color: chartreuse;
-color: black;
+.boton-compra {
+    margin-bottom: 5px;
+    margin-left: 5px;
+    background-color: chartreuse;
+    color: black;
+    border-radius: 5px;
 }
 
 /*--------------- MAIN ---------------*/
