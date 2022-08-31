@@ -1,4 +1,5 @@
-// Validador para mayoria de edad (libreria sweetaler2)
+// Validador para mayoria de edad (libreria sweetaler2) EN PROGRESO
+
 const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
         confirmButton: 'btn btn-success',
@@ -7,39 +8,72 @@ const swalWithBootstrapButtons = Swal.mixin({
     buttonsStyling: false
 })
 
-swalWithBootstrapButtons.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonText: 'Yes, delete it!',
-    cancelButtonText: 'No, cancel!',
-    reverseButtons: true
-}).then((result) => {
-    if (result.isConfirmed) {
-        swalWithBootstrapButtons.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-        )
-    } else if (result.dismiss === Swal.DismissReason.cancel) {
-        swalWithBootstrapButtons.fire(
-            'Cancelled',
-            'Your imaginary file is safe :)',
-            'error'
-        )
+let edad = localStorage.getItem("edad") ?? ""
+
+if (edad === "") {
+    swalWithBootstrapButtons.fire({
+        title: 'Eres mayor de edad?',
+        text: "Debes ser mayor de 18 años para comprar bebidas alcoholicas",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, soy mayor de edad',
+        cancelButtonText: 'No, soy menor de edad',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            swalWithBootstrapButtons.fire(
+                'Genial!',
+                'Disfruta tu estadia en nuestra pagina',
+                'success'
+            )
+            localStorage.setItem("edad", "mayorEdad")
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            swalWithBootstrapButtons.fire(
+                'Lo sentimos',
+                'Pero no puedes comprar bebidas alcoholicas',
+                'error'
+            )
+            localStorage.setItem("edad", "menorEdad")
+            
+            const edad = document.getElementById("bebidas")
+            
+            edad.setAttribute("hidden", "true")
+        }
+    })
+}
+
+if (edad === "menorEdad") {
+    swalWithBootstrapButtons.fire(
+        'Lo sentimos',
+        'Pero nos has indicado que eres menor de edad',
+        'error'
+    )
+    const edad = document.getElementById("bebidas")
+    
+    edad.setAttribute("hidden", "true")
+}
+
+// Clase clientes
+
+class Cliente {
+    constructor(nombre = "", apellido = "", correoElectronico = "", direccion = "") {
+        this.nombre = nombre
+        this.apellido = apellido
+        this.correoElectronico = correoElectronico
+        this.direccion = direccion
     }
-})
+}
 
 // Lista de productos
 
 class Producto {
-    constructor(tipo = "", nombre = "", precio = 900, cantidad = 1, id) {
+    constructor(tipo = "", nombre = "", precio = 900, cantidad = 1, id, img) {
         this.tipo = tipo;
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad = cantidad;
         this.id = id;
+        this.img = img;
     }
 
     aumentarPrecio(porcentajeAumentado) {
@@ -51,24 +85,24 @@ class Producto {
     }
 }
 
-const bebida1 = new Producto("Fernet", "Branca", 1000, 1, 1)
-const bebida2 = new Producto("Fernet", "Branca Menta", 1000, 1, 2)
-const bebida3 = new Producto("Vodka", "Smirnoft", 1250, 1, 3)
-const bebida4 = new Producto("Vodka", "Absolut", 3500, 1, 4)
-const bebida5 = new Producto("Vodka", "Skyy", 980, 1, 5)
-const bebida6 = new Producto("Vodka", "Grey Goose", 9400, 1, 6)
-const bebida7 = new Producto("Ron", "Havana Club", 1900, 1, 7)
-const bebida8 = new Producto("Ron", "Havana Club 3 años blanco", 2100, 1, 8)
-const bebida9 = new Producto("Ron", "Havana Club 7 años", 4650, 1, 9)
-const bebida10 = new Producto("Ron", "Malibu", 2100, 1, 10)
-const bebida11 = new Producto("Gin", "Bombay", 4100, 1, 11)
-const bebida12 = new Producto("Gin", "Bombay Bramble Raspberry Blackberry", 5700, 1, 12)
-const bebida13 = new Producto("Gin", "Beefeater", 3650, 1, 13)
-const bebida14 = new Producto("Gin", "Tanqueray", 3100, 1, 14)
-const bebida15 = new Producto("Whisky", "Jack daniels", 6890, 1, 15)
-const bebida16 = new Producto("Whisky", "Grants Triple Wood", 6100, 1, 16)
-const bebida17 = new Producto("Whisky", "Johnnie walker Black Label", 5100, 1, 17)
-const bebida18 = new Producto("Whisky", "Chivas Regal 12 años", 5700, 1, 18)
+const bebida1 = new Producto("Fernet", "Branca", 1000, 1, 1, "./images/bebidas/fernet-branca.png")
+const bebida2 = new Producto("Fernet", "Branca Menta", 1000, 1, 2, "./images/bebidas/fernet-branca-menta.jpg")
+const bebida3 = new Producto("Vodka", "Smirnoff", 1250, 1, 3, "./images/bebidas/vodka-smirnoff.png")
+const bebida4 = new Producto("Vodka", "Absolut", 3500, 1, 4, "./images/bebidas/vodka-absolut.png")
+const bebida5 = new Producto("Vodka", "Skyy", 980, 1, 5, "./images/bebidas/vodka-skyy.png")
+const bebida6 = new Producto("Vodka", "Grey Goose", 9400, 1, 6, "./images/bebidas/vodka-grey-goose.png")
+const bebida7 = new Producto("Ron", "Havana Club", 1900, 1, 7, "./images/bebidas/ron-havana-club.png")
+const bebida8 = new Producto("Ron", "Havana Club 3 años blanco", 2100, 1, 8, "./images/bebidas/ron-havana-club-3b.png")
+const bebida9 = new Producto("Ron", "Havana Club 7 años", 4650, 1, 9, "./images/bebidas/ron-havana-club-7.png")
+const bebida10 = new Producto("Ron", "Malibu", 2100, 1, 10, "./images/bebidas/ron-malibu.png")
+const bebida11 = new Producto("Gin", "Bombay", 4100, 1, 11, "./images/bebidas/gin-bombay.png")
+const bebida12 = new Producto("Gin", "Bombay Bramble Raspberry Blackberry", 5700, 1, 12, "./images/bebidas/gin-bombay-bramble.png")
+const bebida13 = new Producto("Gin", "Beefeater", 3650, 1, 13, "./images/bebidas/gin-beefeater.png")
+const bebida14 = new Producto("Gin", "Tanqueray", 3100, 1, 14,"./images/bebidas/gin-tanqueray.png")
+const bebida15 = new Producto("Whisky", "Jack daniels", 6890, 1, 15, "./images/bebidas/whisky-jack-daniels.png")
+const bebida16 = new Producto("Whisky", "Grants Triple Wood", 6100, 1, 16, "./images/bebidas/whisky-chivas-regal.png")
+const bebida17 = new Producto("Whisky", "Johnnie walker Black Label", 5100, 1, 17, "./images/bebidas/whisky-johnnie-walker-negro.png")
+const bebida18 = new Producto("Whisky", "Chivas Regal 12 años", 5700, 1, 18, "./images/bebidas/whisky-chivas-regal.png")
 
 const bebidas = [bebida1, bebida2, bebida3, bebida4, bebida5, bebida6, bebida7, bebida8, bebida9, bebida10, bebida11, bebida12, bebida13, bebida14, bebida15, bebida16, bebida17, bebida18]
 
@@ -89,11 +123,12 @@ const divBebidas = document.getElementById("bebidas")
 bebidas.forEach((bebidasArray, indice) => {
     divBebidas.innerHTML += `
     <div class="card margen bebidas" id="bebida${bebidasArray.id}" style="width: 18rem;">
+        <img class="bebidasImg" src="${bebidasArray.img}" >
         <div class="card-body">
             <h5 class="card-title"> ${bebidasArray.nombre}</h5>
             <p class="card-text">Tipo de bebida: ${bebidasArray.tipo}</p>
             <p class="card-text">Precio: $${bebidasArray.precio}</p>
-            <a href="#" id="carrito${indice}" class="btn btn-primary carritoYWishBtn">Agregar al carrito</a>
+            <button href="#" id="carrito${indice}" class="btn btn-primary carritoYWishBtn">Agregar al carrito</button>
         </div>
     </div>
     `
@@ -105,10 +140,23 @@ bebidas.forEach((bebidasArray, indice) => {
 bebidas.forEach((bebida, indice) => {
     const agregarCarrito = document.getElementById(`carrito${indice}`)
     agregarCarrito.addEventListener("click", (e) => {
+        // libreria toastify
+        Toastify({
+            text: `se agrego al carrito: ${bebida.tipo} ${bebida.nombre}`,
+            duration: 3000,
+            gravity: "bottom", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "linear-gradient(to left, #365433, #4BFF01)",
+            },
+            onClick: function () { } // Callback after click
+        }).showToast();
+
         e.preventDefault()
         carrito.push(bebida)
         actualizarCarrito()
-        //console.log(e.target.textContent);
+        //console.log(e.target.textContent);  
     })
 })
 
@@ -125,12 +173,12 @@ const actualizarCarrito = () => {
         const div = document.createElement("div")
         div.className = ("productoEnCarrito")
         div.innerHTML = `
-            <p>${product.tipo} ${product.nombre}</p>
-            <p>Precio: ${product.precio}</p>
-            <p>Cantidad: <span id="cantidad">${product.cantidad}</span></p>
-            <div class="divButton"><button onclick = "eliminarDelCarrito(${product.id})" class="boton-eliminar"><img class="eliminarImg" src="./images/can-trash_110351.png"></img></button></div>
-            <hr>
-            `
+        <p>${product.tipo} ${product.nombre}</p>
+        <p>Precio: ${product.precio}</p>
+        <p>Cantidad: <span id="cantidad">${product.cantidad}</span></p>
+        <div class="divButton"><button onclick = "eliminarDelCarrito(${product.id})" class="boton-eliminar"><img class="eliminarImg" src="./images/can-trash_110351.png"></img></button></div>
+        <hr>
+        `
         carritoContenedor.appendChild(div)
     })
     console.log(carrito);
@@ -155,6 +203,14 @@ botonVaciar.addEventListener("click", () => {
     actualizarCarrito()
 })
 
+// finalizar compra 
+/*
+const botonCompra = document.getElementById("boton-compra")
+
+botonCompra.addEventListener("click", () =>{
+    
+})
+*/
 /*
 EJEMPLO DE SUBMIT
 const form = document.getElementById("form")
@@ -164,51 +220,5 @@ form.addEventListener("submit", (pepe) =>{
     console.log("hola");
 })
 */
-/*
-//DESCUENTO A TODAS LAS BEBIDAS (agregar descuento a algunas bebidas y poner ul filtro para solo las que estab en descuento)
-for (let i = 0; i < bebidas.length; i++) {
-    console.log(bebidas[i].aplicarDescuento(0.50));
-}
-*/
-/*
-//FILTRO POR TIPO DE BEBIDAS
-const tipoFernet = bebidas.filter((tipoBebida) => tipoBebida.tipo == "fernet")
-const tipoVodka = bebidas.filter((tipoBebida) => tipoBebida.tipo == "vodka")
-const tipoRon = bebidas.filter((tipoBebida) => tipoBebida.tipo == "ron")
-const tipoGin = bebidas.filter((tipoBebida) => tipoBebida.tipo == "gin")
-const tipoWhiskey = bebidas.filter((tipoBebida) => tipoBebida.tipo == "whisky")
 
-let pregunta
-do {
-    pregunta = parseFloat(prompt(`que tipo de bebidas estas buscando?
-    1- fernet  
-    2- vodka  
-    3- ron  
-    4- gin  
-    5- whiskey`))
-
-    switch (pregunta) {
-        case 1:
-            console.log(tipoFernet);
-            break;
-        case 2:
-            console.log(tipoVodka);
-            break;    
-        case 3:
-            console.log(tipoRon);
-            break;
-        case 4:
-            console.log(tipoGin);
-            break;
-        case 5:
-            console.log(tipoWhiskey);
-            break;
-        default:
-            alert("no esxiste este tipo de bebida")
-        break;
-    }
-
-    listo = prompt("quieres ver mas tipos de bebidas?").toLowerCase()
-} while (listo !== "no");
-*/
 
