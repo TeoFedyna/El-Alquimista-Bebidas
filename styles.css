@@ -91,6 +91,16 @@ header {
   border-radius: 5px;
 }
 
+/*--------------- modal comprar ---------------*/
+.fCompra {
+    background-color: chartreuse;
+    border-color: #000000;
+}
+
+.cancelar {
+    border-color: #000000;
+}
+
 /*--------------- MAIN ---------------*/
 main {
   padding: 60px;
