@@ -1,13 +1,13 @@
-// Validador para mayoria de edad (libreria sweetaler2) EN PROGRESO
 
-const swalWithBootstrapButtons = Swal.mixin({
+// Validador para mayoria de edad (libreria sweetaler2) EN PROGRESO
+/*const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
         confirmButton: 'btn btn-success',
         cancelButton: 'btn btn-danger'
     },
     buttonsStyling: false
 })
-
+*/
 let edad = localStorage.getItem("edad") ?? ""
 
 if (edad === "") {
