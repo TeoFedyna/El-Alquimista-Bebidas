@@ -91,6 +91,11 @@ header {
   border-radius: 5px;
 }
 
+.fCompra:hover {
+  background-color: black;
+  color: chartreuse;
+  border-color: white;
+}
 /*--------------- modal comprar ---------------*/
 .fCompra {
     background-color: chartreuse;

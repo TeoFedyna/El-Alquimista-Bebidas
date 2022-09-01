@@ -107,6 +107,7 @@ const bebida18 = new Producto("Whisky", "Chivas Regal 12 años", 5700, 1, 18, ".
 const bebidas = [bebida1, bebida2, bebida3, bebida4, bebida5, bebida6, bebida7, bebida8, bebida9, bebida10, bebida11, bebida12, bebida13, bebida14, bebida15, bebida16, bebida17, bebida18]
 
 let carrito = []
+let pedidos = []
 
 //LOCAL STORAGE (getItem)
 
@@ -204,13 +205,22 @@ botonVaciar.addEventListener("click", () => {
 })
 
 // finalizar compra 
-/*
-const botonCompra = document.getElementById("boton-compra")
 
-botonCompra.addEventListener("click", () =>{
+let pedido = localStorage.getItem("pedido") ?? ""
+const formularioPedidos = document.getElementById("formularioPedidos")
+
+formularioPedidos.addEventListener("submit", (e) =>{
+    e.preventDefault()
+    //console.log(e.target);
+    let formulario = new FormData(e.target)
+    //console.log(formulario.get("nombre"), formulario.get("apellido"),formulario.get("correoElec"), formulario.get("direccion"));
     
+    let cliente = new Cliente(formulario.get("nombre"), formulario.get("apellido"),formulario.get("correoElec"), formulario.get("direccion"))
+    pedidos.push(cliente)
+    console.log(pedidos);
+    //localStorage.setItem("pedido", )
 })
-*/
+
 /*
 EJEMPLO DE SUBMIT
 const form = document.getElementById("form")

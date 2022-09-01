@@ -32,6 +32,8 @@
             aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
                 <div class="carritoHtml ">
+                    <button type="button" class="btn-close btn-close-white cerrarOffcanvas" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                     <!-- <button id="carritoButtom p-buttom" class="carritoButtom" type="button"><img class="carritoImg" src="./images/shopping_cart_market_ecommerce_icon_144576.png" title=""></button>-->
                     <h1 class="carrito-titulo">Carrito</h1>
 
@@ -45,8 +47,7 @@
                         <button id="vaciar-carrito" class="vaciar-carrito">Vaciar carrito</button>
                         <button id="boton-compra" class="boton-compra" type="button" data-bs-toggle="modal"
                             data-bs-target="#modalComprar">Comprar</button>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
+
                     </div>
                 </div>
             </div>
@@ -56,40 +57,40 @@
         <!-- Modal -->
         <div class="modal fade" id="modalComprar" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
-                <div class="modal-content">
+                <form class="modal-content"  id="formularioPedidos">
                     <div class="modal-header">
                         <h3 class="modal-title" id="exampleModalLabel">Ultimos pasos</h3>
                     </div>
                     <div class="modal-body">
-                        <h6>Antes de finalizar la compra necesitamos algunos datos para el envio</p>
-                            <form>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1">
-                                </div>
+                        <h6>Antes de finalizar la compra necesitamos algunos datos para el envio</h6>
+                        <div>
+                            <div class="mb-3">
+                                <label for="forNombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre1" name="nombre">
+                            </div>
 
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Apellido</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1">
-                                </div>
+                            <div class="mb-3">
+                                <label for="forApellido" class="form-label">Apellido</label>
+                                <input type="text" class="form-control" id="apellodo1" name="apellido">
+                            </div>
 
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-                                </div>
+                            <div class="mb-3">
+                                <label for="forCorreoElec" class="form-label">Correo electronico</label>
+                                <input type="email" class="form-control" id="correoElectronico"
+                                    aria-describedby="emailHelp" name="correoElec">
+                            </div>
 
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Direccion</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1">
-                                </div>
-                            </form>
+                            <div class="mb-3">
+                                <label for="forDireccion" class="form-label">Direccion</label>
+                                <input type="text" class="form-control" id="direccion1" name="direccion">
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary cancelar" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary fCompra">finalizar compra</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal btnCancelar">Cancelar</button>
+                        <button type="submit" id="fCompra" class="btn btn-primary fCompra">finalizar compra</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
 
