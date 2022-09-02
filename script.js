@@ -56,11 +56,12 @@ if (edad === "menorEdad") {
 // Clase clientes
 
 class Cliente {
-    constructor(nombre = "", apellido = "", correoElectronico = "", direccion = "") {
+    constructor(nombre = "", apellido = "", correoElectronico = "", direccion = "", pedido) {
         this.nombre = nombre
         this.apellido = apellido
         this.correoElectronico = correoElectronico
         this.direccion = direccion
+        this.pedido = carrito
     }
 }
 
@@ -204,31 +205,28 @@ botonVaciar.addEventListener("click", () => {
     actualizarCarrito()
 })
 
+
+
 // finalizar compra 
 
-let pedido = localStorage.getItem("pedido") ?? ""
+let pedido = localStorage.getItem("pedidos") ?? []
 const formularioPedidos = document.getElementById("formularioPedidos")
+const finalizarCompra = document.getElementById("fCompra")
 
 formularioPedidos.addEventListener("submit", (e) =>{
     e.preventDefault()
     //console.log(e.target);
     let formulario = new FormData(e.target)
-    //console.log(formulario.get("nombre"), formulario.get("apellido"),formulario.get("correoElec"), formulario.get("direccion"));
     
     let cliente = new Cliente(formulario.get("nombre"), formulario.get("apellido"),formulario.get("correoElec"), formulario.get("direccion"))
     pedidos.push(cliente)
     console.log(pedidos);
-    //localStorage.setItem("pedido", )
+    localStorage.setItem("pedidos", JSON.stringify(pedidos))
+    formularioPedidos.reset()
+    carrito.length = 0
+    actualizarCarrito()
+    
 })
 
-/*
-EJEMPLO DE SUBMIT
-const form = document.getElementById("form")
-
-form.addEventListener("submit", (pepe) =>{
-    pepe.preventDefault
-    console.log("hola");
-})
-*/
 
 
