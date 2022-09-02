@@ -205,8 +205,6 @@ botonVaciar.addEventListener("click", () => {
     actualizarCarrito()
 })
 
-
-
 // finalizar compra 
 
 let pedido = localStorage.getItem("pedidos") ?? []
@@ -225,7 +223,6 @@ formularioPedidos.addEventListener("submit", (e) =>{
     formularioPedidos.reset()
     carrito.length = 0
     actualizarCarrito()
-    
 })
 
 
