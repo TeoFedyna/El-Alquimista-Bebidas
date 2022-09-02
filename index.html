@@ -57,7 +57,7 @@
         <!-- Modal -->
         <div class="modal fade" id="modalComprar" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
-                <form class="modal-content"  id="formularioPedidos">
+                <form class="modal-content" id="formularioPedidos">
                     <div class="modal-header">
                         <h3 class="modal-title" id="exampleModalLabel">Ultimos pasos</h3>
                     </div>
@@ -87,13 +87,35 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal btnCancelar">Cancelar</button>
-                        <button type="submit" id="fCompra" class="btn btn-primary fCompra">finalizar compra</button>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal btnCancelar">Cancelar</button>
+                        <button type="submit" id="fCompra" class="btn btn-primary fCompra" data-bs-toggle="modal" data-bs-target="#ultimoModal">finalizar compra</button>
                     </div>
                 </form>
             </div>
         </div>
 
+        <!-- Segundo Modal -->
+
+        <div class="modal fade" id="ultimoModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalToggleLabel2">Excelente!</h5>
+                    </div>
+                    <div class="modal-body">
+                        Gracias por tu compra, en la brevedad tus bebidas seran enviadas a la direccion que asignaste
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary ok" data-bs-target="#exampleModalToggle" data-bs-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Main -->
         <h1 class="tituloMain">Nuestras Bebidas</h1>
 
         <div id="bebidas" class="bebidasList">
