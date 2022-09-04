@@ -1,13 +1,13 @@
 
 // Validador para mayoria de edad (libreria sweetaler2) EN PROGRESO
-/*const swalWithBootstrapButtons = Swal.mixin({
+const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
         confirmButton: 'btn btn-success',
         cancelButton: 'btn btn-danger'
     },
     buttonsStyling: false
 })
-*/
+
 let edad = localStorage.getItem("edad") ?? ""
 
 if (edad === "") {
@@ -205,8 +205,6 @@ botonVaciar.addEventListener("click", () => {
     actualizarCarrito()
 })
 
-
-
 // finalizar compra 
 
 let pedido = localStorage.getItem("pedidos") ?? []
@@ -227,6 +225,3 @@ formularioPedidos.addEventListener("submit", (e) =>{
     actualizarCarrito()
     
 })
-
-
-
