@@ -223,5 +223,6 @@ formularioPedidos.addEventListener("submit", (e) =>{
     formularioPedidos.reset()
     carrito.length = 0
     actualizarCarrito()
-    
 })
+
+

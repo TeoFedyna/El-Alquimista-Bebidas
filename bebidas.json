@@ -1,0 +1,20 @@
+[
+    {"id":1, "tipo" : "Fernet", "nombre" : "Branca", "precio" : 1000, "cantidad" : 1, "img":"./images/bebidas/fernet-branca.png"},
+    {"id":2, "tipo" : "Fernet", "nombre" : "Branca Menta", "precio" : 1000, "cantidad" : 1, "img":"./images/bebidas/fernet-branca-menta.jpg"},
+    {"id":3, "tipo" : "Vodka", "nombre" : "Smirnoff", "precio" : 1250, "cantidad" : 1, "img":"./images/bebidas/vodka-smirnoff.png"},
+    {"id":4, "tipo" : "Vodka", "nombre" : "Absolut", "precio" : 3500, "cantidad" : 1, "img":"./images/bebidas/vodka-absolut.png"},
+    {"id":5, "tipo" : "Vodka", "nombre" : "Skyy", "precio" : 980, "cantidad" : 1, "img":"./images/bebidas/vodka-skyy.png"},
+    {"id":6, "tipo" : "Vodka", "nombre" : "Grey Goose", "precio" : 9400, "cantidad" : 1, "img":"./images/bebidas/vodka-grey-goose.png"},
+    {"id":7, "tipo" : "Ron", "nombre" : "Havana Club", "precio" : 1900, "cantidad" : 1, "img":"./images/bebidas/ron-havana-club.png"},
+    {"id":8, "tipo" : "Ron", "nombre" : "Havana Club 3 años blanco", "precio" : 2100, "cantidad" : 1, "img":"./images/bebidas/ron-havana-club-3b.png"},
+    {"id":9, "tipo" : "Ron", "nombre" : "Havana Club 7 años", "precio" : 4650, "cantidad" : 1, "img":"./images/bebidas/ron-havana-club-7.png"},
+    {"id":10, "tipo" : "Ron", "nombre" : "Malibu", "precio" : 2100, "cantidad" : 1, "img":"./images/bebidas/ron-malibu.png"},
+    {"id":11, "tipo" : "Gin", "nombre" : "Bombay", "precio" : 4100, "cantidad" : 1, "img":"./images/bebidas/gin-bombay.png"},
+    {"id":12, "tipo" : "Gin", "nombre" : "Bombay Bramble Raspberry Blackberry", "precio" : 5700, "cantidad" : 1, "img":"./images/bebidas/gin-bombay-bramble.png"},
+    {"id":13, "tipo" : "Gin", "nombre" : "Beefeater", "precio" : 3650, "cantidad" : 1, "img":"./images/bebidas/gin-beefeater.png"},
+    {"id":14, "tipo" : "Gin", "nombre" : "Tanqueray", "precio" : 3100, "cantidad" : 1, "img":"./images/bebidas/gin-tanqueray.png"},
+    {"id":15, "tipo" : "Whisky", "nombre" : "Jack daniels", "precio" : 6890, "cantidad" : 1, "img":"./images/bebidas/whisky-jack-daniels.png"},
+    {"id":16, "tipo" : "Whisky", "nombre" : "Grants Triple Wood", "precio" : 6100, "cantidad" : 1, "img":"./images/bebidas/whisky-chivas-regal.png"},
+    {"id":17, "tipo" : "Whisky", "nombre" :"Johnnie walker Black Label", "precio" : 5100, "cantidad" : 1, "img":"./images/bebidas/whisky-johnnie-walker-negro.png"},
+    {"id":18, "tipo" : "Whisky", "nombre" : "Chivas Regal 12 años", "precio" : 5700, "cantidad" : 1, "img":"./images/bebidas/whisky-chivas-regal.png"}
+]
