@@ -1,5 +1,4 @@
-
-// Validador para mayoria de edad (libreria sweetaler2) EN PROGRESO
+// Validador para mayoria de edad (LIBRERIA sweetaler2)
 const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
         confirmButton: 'btn btn-success',
@@ -34,9 +33,9 @@ if (edad === "") {
                 'error'
             )
             localStorage.setItem("edad", "menorEdad")
-            
+
             const edad = document.getElementById("bebidas")
-            
+
             edad.setAttribute("hidden", "true")
         }
     })
@@ -49,7 +48,7 @@ if (edad === "menorEdad") {
         'error'
     )
     const edad = document.getElementById("bebidas")
-    
+
     edad.setAttribute("hidden", "true")
 }
 
@@ -86,26 +85,7 @@ class Producto {
     }
 }
 
-const bebida1 = new Producto("Fernet", "Branca", 1000, 1, 1, "./images/bebidas/fernet-branca.png")
-const bebida2 = new Producto("Fernet", "Branca Menta", 1000, 1, 2, "./images/bebidas/fernet-branca-menta.jpg")
-const bebida3 = new Producto("Vodka", "Smirnoff", 1250, 1, 3, "./images/bebidas/vodka-smirnoff.png")
-const bebida4 = new Producto("Vodka", "Absolut", 3500, 1, 4, "./images/bebidas/vodka-absolut.png")
-const bebida5 = new Producto("Vodka", "Skyy", 980, 1, 5, "./images/bebidas/vodka-skyy.png")
-const bebida6 = new Producto("Vodka", "Grey Goose", 9400, 1, 6, "./images/bebidas/vodka-grey-goose.png")
-const bebida7 = new Producto("Ron", "Havana Club", 1900, 1, 7, "./images/bebidas/ron-havana-club.png")
-const bebida8 = new Producto("Ron", "Havana Club 3 años blanco", 2100, 1, 8, "./images/bebidas/ron-havana-club-3b.png")
-const bebida9 = new Producto("Ron", "Havana Club 7 años", 4650, 1, 9, "./images/bebidas/ron-havana-club-7.png")
-const bebida10 = new Producto("Ron", "Malibu", 2100, 1, 10, "./images/bebidas/ron-malibu.png")
-const bebida11 = new Producto("Gin", "Bombay", 4100, 1, 11, "./images/bebidas/gin-bombay.png")
-const bebida12 = new Producto("Gin", "Bombay Bramble Raspberry Blackberry", 5700, 1, 12, "./images/bebidas/gin-bombay-bramble.png")
-const bebida13 = new Producto("Gin", "Beefeater", 3650, 1, 13, "./images/bebidas/gin-beefeater.png")
-const bebida14 = new Producto("Gin", "Tanqueray", 3100, 1, 14,"./images/bebidas/gin-tanqueray.png")
-const bebida15 = new Producto("Whisky", "Jack daniels", 6890, 1, 15, "./images/bebidas/whisky-jack-daniels.png")
-const bebida16 = new Producto("Whisky", "Grants Triple Wood", 6100, 1, 16, "./images/bebidas/whisky-chivas-regal.png")
-const bebida17 = new Producto("Whisky", "Johnnie walker Black Label", 5100, 1, 17, "./images/bebidas/whisky-johnnie-walker-negro.png")
-const bebida18 = new Producto("Whisky", "Chivas Regal 12 años", 5700, 1, 18, "./images/bebidas/whisky-chivas-regal.png")
-
-const bebidas = [bebida1, bebida2, bebida3, bebida4, bebida5, bebida6, bebida7, bebida8, bebida9, bebida10, bebida11, bebida12, bebida13, bebida14, bebida15, bebida16, bebida17, bebida18]
+//ARRAYS
 
 let carrito = []
 let pedidos = []
@@ -119,48 +99,55 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
-//HTML DINAMICO
+//AJAX Y FETCH / HTML DINAMICO
+
 const divBebidas = document.getElementById("bebidas")
 
-bebidas.forEach((bebidasArray, indice) => {
-    divBebidas.innerHTML += `
-    <div class="card margen bebidas" id="bebida${bebidasArray.id}" style="width: 18rem;">
-        <img class="bebidasImg" src="${bebidasArray.img}" >
-        <div class="card-body">
-            <h5 class="card-title"> ${bebidasArray.nombre}</h5>
-            <p class="card-text">Tipo de bebida: ${bebidasArray.tipo}</p>
-            <p class="card-text">Precio: $${bebidasArray.precio}</p>
-            <button href="#" id="carrito${indice}" class="btn btn-primary carritoYWishBtn">Agregar al carrito</button>
+fetch("./json/bebidas.json")
+.then(response => response.json())
+.then(bebidas => {
+    bebidas.forEach((bebidasArray, indice) => {
+        divBebidas.innerHTML += `
+        <div class="card margen bebidas" id="bebida${bebidasArray.id}" style="width: 18rem;">
+            <img class="bebidasImg" src="./images/${bebidasArray.img}" >
+            <div class="card-body">
+                <h5 class="card-title"> ${bebidasArray.nombre}</h5>
+                <p class="card-text">Tipo de bebida: ${bebidasArray.tipo}</p>
+                <p class="card-text">Precio: $${bebidasArray.precio}</p>
+                <button href="#" id="carrito${indice}" class="btn btn-primary carritoYWishBtn">Agregar al carrito</button>
+            </div>
         </div>
-    </div>
-    `
-});
+        `
+    });
+    //EVENTO agregar al carrito
+    bebidas.forEach((bebida, indice) => {
+        const agregarCarrito = document.getElementById(`carrito${indice}`)
+        
+        agregarCarrito.addEventListener("click", (e) => {
+            // libreria toastify
+            Toastify({
+                text: `se agrego al carrito: ${bebida.tipo} ${bebida.nombre}`,
+                duration: 3000,
+                gravity: "bottom", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to left, #365433, #4BFF01)",
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+
+            e.preventDefault()
+            carrito.push(bebida)
+            actualizarCarrito()
+            //console.log(e.target.textContent);  
+        })
+    })
+})
 
 //EVENTOS
 
-//agregar al carrito
-bebidas.forEach((bebida, indice) => {
-    const agregarCarrito = document.getElementById(`carrito${indice}`)
-    agregarCarrito.addEventListener("click", (e) => {
-        // libreria toastify
-        Toastify({
-            text: `se agrego al carrito: ${bebida.tipo} ${bebida.nombre}`,
-            duration: 3000,
-            gravity: "bottom", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-                background: "linear-gradient(to left, #365433, #4BFF01)",
-            },
-            onClick: function () { } // Callback after click
-        }).showToast();
-
-        e.preventDefault()
-        carrito.push(bebida)
-        actualizarCarrito()
-        //console.log(e.target.textContent);  
-    })
-})
+// actualizar carrito
 
 const carritoContenedor = document.getElementById("carrito-contenedor")
 const precioTotal = document.getElementById("precioTotal")
@@ -211,12 +198,12 @@ let pedido = localStorage.getItem("pedidos") ?? []
 const formularioPedidos = document.getElementById("formularioPedidos")
 const finalizarCompra = document.getElementById("fCompra")
 
-formularioPedidos.addEventListener("submit", (e) =>{
+formularioPedidos.addEventListener("submit", (e) => {
     e.preventDefault()
     //console.log(e.target);
     let formulario = new FormData(e.target)
-    
-    let cliente = new Cliente(formulario.get("nombre"), formulario.get("apellido"),formulario.get("correoElec"), formulario.get("direccion"))
+
+    let cliente = new Cliente(formulario.get("nombre"), formulario.get("apellido"), formulario.get("correoElec"), formulario.get("direccion"))
     pedidos.push(cliente)
     console.log(pedidos);
     localStorage.setItem("pedidos", JSON.stringify(pedidos))
