@@ -151,7 +151,7 @@ fetch("./json/bebidas.json")
 
 const carritoContenedor = document.getElementById("carrito-contenedor")
 const precioTotal = document.getElementById("precioTotal")
-
+// Creo una constante "actualizarCarrito" la cual se va a ir colocando dentro de los demas eventos y actualizarce de forma hereditaria 
 const actualizarCarrito = () => {
     //LOCAL STORAGE (setItem)
     localStorage.setItem("carrito", JSON.stringify(carrito))
@@ -211,5 +211,7 @@ formularioPedidos.addEventListener("submit", (e) => {
     carrito.length = 0
     actualizarCarrito()
 })
-
-
+/*
+Una vez se preciona el boton comprar en el carrito se despliega un modal-form, al completarse los imputs y precionar
+el boton "finalizar compra" esos datos ingresados mas el array con las bebidas seleccionadas se cargan en un storage.
+*/
