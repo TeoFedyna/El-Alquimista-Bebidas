@@ -64,7 +64,7 @@ class Cliente {
     }
 }
 
-// Lista de productos
+// Lista de productos (ahora se encuentran en ./json/bebidas.json)
 
 class Producto {
     constructor(tipo = "", nombre = "", precio = 900, cantidad = 1, id, img) {
@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 //AJAX Y FETCH / HTML DINAMICO
+
 
 const divBebidas = document.getElementById("bebidas")
 
@@ -151,7 +152,9 @@ fetch("./json/bebidas.json")
 
 const carritoContenedor = document.getElementById("carrito-contenedor")
 const precioTotal = document.getElementById("precioTotal")
+
 // Creo una constante "actualizarCarrito" la cual se va a ir colocando dentro de los demas eventos y actualizarce de forma hereditaria 
+
 const actualizarCarrito = () => {
     //LOCAL STORAGE (setItem)
     localStorage.setItem("carrito", JSON.stringify(carrito))
@@ -164,7 +167,6 @@ const actualizarCarrito = () => {
         div.innerHTML = `
         <p>${product.tipo} ${product.nombre}</p>
         <p>Precio: ${product.precio}</p>
-        <p>Cantidad: <span id="cantidad">${product.cantidad}</span></p>
         <div class="divButton"><button onclick = "eliminarDelCarrito(${product.id})" class="boton-eliminar"><img class="eliminarImg" src="./images/can-trash_110351.png"></img></button></div>
         <hr>
         `
